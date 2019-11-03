@@ -5,7 +5,7 @@
 /* Version: 1.0 Initial Release*/
 /* Build Date: 15-10-2016*/
 /* Author: FOXTHEMES*/
-/* Website: http://foxthemes.com/
+/* Website: https://foxthemes.com/
 /* Copyright: (C) 2016 */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
