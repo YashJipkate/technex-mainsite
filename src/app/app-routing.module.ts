@@ -24,8 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./kaleidoscope/kaleidoscope.module').then(m => m.KaleidoscopeModule)
   },
   {
-    path: 'sponsers',
-    loadChildren: () => import('./sponsers/sponsers.module').then(m => m.SponsersModule)
+    path: 'sponsors',
+    loadChildren: () => import('./sponsors/sponsors.module').then(m => m.SponsorsModule)
   }
 ];
 
