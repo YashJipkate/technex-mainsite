@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LandingComponent } from './landing/landing.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LandingComponent
+  },
   {
     path: 'startupFair',
     loadChildren: () => import('./startup-fair/startup-fair.module').then(m => m.StartupFairModule)
