@@ -4,3 +4,28 @@
 #bar{
     overflow: hidden;
 }
+#test{
+height:70px;
+font-size: 30px;
+text-align: center;
+}
+#test1{
+font-size: 20px;
+text-align: center;
+}
+
+#mtxt {
+    -webkit-animation-name: mymove ;
+    -webkit-animation-duration: 5s;
+    animation-name: mymove;
+    animation-duration: 1s;
+    
+   
+}
+		
+
+
+@keyframes mymove {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-100px);}
+}
