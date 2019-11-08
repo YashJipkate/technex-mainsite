@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 #test{
-height:70px;
+height:60px;
 font-size: 30px;
 text-align: center;
 }
@@ -14,18 +14,42 @@ font-size: 20px;
 text-align: center;
 }
 
-#mtxt {
-    -webkit-animation-name: mymove ;
-    -webkit-animation-duration: 5s;
-    animation-name: mymove;
-    animation-duration: 1s;
-    
-   
-}
-		
+.fade-in{
+    animation: animationFrames ease 1s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    animation-fill-mode:forwards; /*when the spec is finished*/
+    -webkit-animation: animationFrames ease 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+
+  }
+  
+  @keyframes animationFrames{
+    0% {
+      opacity:0;
+      transform:  translate(0px,+110px)  ;
+    }
+    100% {
+      opacity:1;
+      transform:  translate(0px,0px)  ;
+    }
+  }
+
+  
+  @-webkit-keyframes animationFrames {
+    0% {
+      opacity:0;
+      -webkit-transform:  translate(0px,+110px)  ;
+    }
+    100% {
+      opacity:1;
+      -webkit-transform:  translate(0px,0px)  ;
+    }
+  }
+  
 
 
-@keyframes mymove {
-    from {transform: translateY(0px);}
-    to {transform: translateY(-100px);}
-}
+
+  
