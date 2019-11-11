@@ -25,26 +25,25 @@
   -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
   }
   
-   @keyframes animationFrames{
-     0% {
-        opacity:0;
-        transform:  translate(0px,+110px)  ;
-      }
-     100% {
-        opacity:1;
-        transform:  translate(0px,0px)  ;
-      }
-    }
+@keyframes animationFrames{
+  0% {
+    opacity:0;
+    transform:  translate(0px,+110px)  ;
+   }
+  100% {
+     opacity:1;
+     transform:  translate(0px,0px)  ;
+   }
+}
 
   
-   @-webkit-keyframes animationFrames {
-     0% {
-       opacity:0;
-       -webkit-transform:  translate(0px,+110px)  ;
-     }
-     100% {
-       opacity:1;
-       -webkit-transform:  translate(0px,0px)  ;
-     }
+@-webkit-keyframes animationFrames {
+ 0% {
+    opacity:0;
+   -webkit-transform:  translate(0px,+110px)  ;
    }
-   
+  100% {
+   opacity:1;
+  -webkit-transform:  translate(0px,0px)  ;
+   }
+}
