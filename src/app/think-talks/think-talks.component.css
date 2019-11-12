@@ -40,7 +40,7 @@
 }
 
 @-webkit-keyframes animationFrames {
- 0% {
+  0% {
     opacity: 0;
     -webkit-transform: translate(0px,+110px);
   }
