@@ -40,7 +40,11 @@
 }
 
 @-webkit-keyframes animationFrames {
+<<<<<<< HEAD
  0% {
+=======
+  0% {
+>>>>>>> 3cdd490bcbe59014318167b77553a62f196aaf38
     opacity: 0;
     -webkit-transform: translate(0px,+110px);
   }
