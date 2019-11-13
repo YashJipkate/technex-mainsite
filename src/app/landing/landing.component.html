@@ -16,7 +16,20 @@
     <span class="text-label">Register</span>
 </a>
                     <a href="https://ca.technex.in" class="all_events">
-        CA Portal					</a>
+        CA Portal </a> 
+        
+            
+        <a
+        *ngFor="let menuItem of menuItems"
+        >
+        <a [routerLink]="[menuItem.path]">
+          <p id="ss1" >{{ menuItem.title }}</p>
+        </a>
+        
+    </a>	
+					
+					
+
             </div>
             <div class="register-popup custom-popup">
     <div class="popup-close"><i class="fa"></i>X</div>
