@@ -10,27 +10,42 @@
 		</div>
 		<nav class="main-nav">
     <!-- Site menu -->
-			<ul id="menu-top-left-menu" class="anchor-navigation"><li id="menu-item-485"  class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children active page-dropdown nav-item menu-item-485"><a href="#home">Home</a>
-        
-			
+			<ul id="menu-top-left-menu" class="anchor-navigation">
+
+<li
+*ngFor="let leftmenuItem of leftmenuItems"
+>
+<a [routerLink]="[leftmenuItem.path]">
+  <p id="ss">{{ leftmenuItem.title }}</p>
+</a>
+
 </li>
-<li id="menu-item-844"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-844"><a href="#" class="anchor-scroll">About</a></li>
-<li id="menu-item-854"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-854"><a href="#" class="anchor-scroll">Team</a></li>
-<li id="menu-item-855"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-855"><a href="#" class="anchor-scroll">Services</a></li>
-<li id="menu-item-856"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-856"><a href="#" class="anchor-scroll">Events</a></li>
-<li id="menu-item-857"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-857"><a href="#" class="anchor-scroll">Gallery</a></li>
 </ul>
 			<div class="logo-block">
-				<a class="logo" href="https://w2.themedemo.co/miami/">
-												<img class="f-logo" src="assets/wp-content/uploads/2016/11/logo.png" alt="Miami">
-										</a>
+				<a class="logo" [routerLink]="[logomenuItems[0].path]">
+					<img class="f-logo" src="assets/image/logo-s2-white.png" id="navbar-logo" alt="TECHNEX">
+				</a>
 			</div>
 
-			<ul id="menu-top-right-menu" class="anchor-navigation"><li id="menu-item-846"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-846"><a href="#" class="anchor-scroll">Reservation</a></li>
-<li id="menu-item-847"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-847"><a href="#" class="anchor-scroll">Testimonials</a></li>
-<li id="menu-item-848"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-848"><a href="#" class="anchor-scroll">News</a></li>
-<li id="menu-item-849"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-849"><a href="#" class="anchor-scroll">Contact</a></li>
-<li id="menu-item-498"  class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-498"><a href="#">Our blog</a></li>
+			<ul id="menu-top-right-menu" class="anchor-navigation">
+					<li
+					*ngFor="let rightmenuItem of rightmenuItems"
+					>
+					<a [routerLink]="[rightmenuItem.path]">
+					  <p id=ss>{{ rightmenuItem.title }}</p>
+					</a>
+					
+					</li>	
+
+					<li>
+					
+					<a >
+					  <p id=ss1>REGISTRATIONS CLOSED</p>
+					</a>	
+
+					</li>
+					
+					
 </ul>
 		</nav>
 	</div>
