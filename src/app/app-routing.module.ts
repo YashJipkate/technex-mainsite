@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { EventsComponent } from './events/events.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -35,8 +36,12 @@ const routes: Routes = [
     path: 'sponsors',
     loadChildren: () => import('./sponsors/sponsors.module').then(m => m.SponsorsModule)
   },
-  { path: 'exhibitions', loadChildren: () => import('./exhibitions/exhibitions.module').then(m => m.ExhibitionsModule) },
-  { path: 'workshops', loadChildren: () => import('./workshops/workshops.module').then(m => m.WorkshopsModule) }
+  { path: 'exhibitions', 
+    loadChildren: () => import('./exhibitions/exhibitions.module').then(m => m.ExhibitionsModule) 
+  },
+  { path: 'workshops', 
+    loadChildren: () => import('./workshops/workshops.module').then(m => m.WorkshopsModule) 
+  }
 ];
 
 @NgModule({
