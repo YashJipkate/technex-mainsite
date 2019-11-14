@@ -15,7 +15,7 @@
 <li
 *ngFor="let leftmenuItem of leftmenuItems"
 >
-<a [routerLink]="[leftmenuItem.path]">
+<a (click)="setDocTitle( leftmenuItem.title + ' | TECHNEX')" [routerLink]="[leftmenuItem.path]">
   <p id="ss">{{ leftmenuItem.title }}</p>
 </a>
 
