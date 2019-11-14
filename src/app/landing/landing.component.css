@@ -2,7 +2,8 @@
     width: 100%;
 }
 
-#ss1{
+#same{
     font-size:15px;
     color:white;
+    display: inline;
 }
