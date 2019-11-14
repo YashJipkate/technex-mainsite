@@ -13,26 +13,26 @@
 			<ul id="menu-top-left-menu" class="anchor-navigation">
 
 <li
-*ngFor="let menuItem of menuItems"
+*ngFor="let leftmenuItem of leftmenuItems"
 >
-<a [routerLink]="[menuItem.path]">
-  <p id="ss">{{ menuItem.title }}</p>
+<a [routerLink]="[leftmenuItem.path]">
+  <p id="ss">{{ leftmenuItem.title }}</p>
 </a>
 
 </li>
 </ul>
 			<div class="logo-block">
-				<a class="logo" [routerLink]="[menuItemmms[0].path]">
+				<a class="logo" [routerLink]="[logomenuItems[0].path]">
 					<img class="f-logo" src="assets/image/logo-s2-white.png" id="navbar-logo" alt="TECHNEX">
 				</a>
 			</div>
 
 			<ul id="menu-top-right-menu" class="anchor-navigation">
 					<li
-					*ngFor="let menuItemm of menuItemms"
+					*ngFor="let rightmenuItem of rightmenuItems"
 					>
-					<a [routerLink]="[menuItemm.path]">
-					  <p id=ss>{{ menuItemm.title }}</p>
+					<a [routerLink]="[rightmenuItem.path]">
+					  <p id=ss>{{ rightmenuItem.title }}</p>
 					</a>
 					
 					</li>	

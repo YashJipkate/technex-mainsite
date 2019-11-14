@@ -6,7 +6,7 @@ declare interface RouteInfo {
   class: string;
 }
 
-export const ROUTES: RouteInfo[] = [
+export const LEFTROUTES: RouteInfo[] = [
   {
     path: 'startupFair',
     title: 'STARTUP FAIR',
@@ -34,7 +34,7 @@ export const ROUTES: RouteInfo[] = [
   },
 ];
 
-export const ROUTS: RouteInfo[] = [
+export const RIGHTROUTES: RouteInfo[] = [
   {
     path: '#',
     title: 'WORKSHOPS',
@@ -52,7 +52,7 @@ export const ROUTS: RouteInfo[] = [
   },
 ];
 
-export const logo: RouteInfo[] = [
+export const LOGOROUTES: RouteInfo[] = [
   {
     path: '/',
     title: '',
@@ -68,16 +68,16 @@ export const logo: RouteInfo[] = [
 })
 
 export class NavbarComponent implements OnInit {
-  menuItems: any[];
-  menuItemms: any[];
-  menuItemmms: any[];
+  leftmenuItems: any[];
+  rightmenuItems: any[];
+  logomenuItems: any[];
 
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
-    this.menuItemms = ROUTS.filter(menuItemm => menuItemm);
-    this.menuItemmms = logo.filter(menuItemmm => menuItemmm);
+    this.leftmenuItems = LEFTROUTES.filter(menuItem => menuItem);
+    this.rightmenuItems = RIGHTROUTES.filter(menuItemm => menuItemm);
+    this.logomenuItems = LOGOROUTES.filter(menuItemmm => menuItemmm);
 
   }  
 }
