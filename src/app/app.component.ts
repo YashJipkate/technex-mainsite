@@ -11,7 +11,10 @@ import { filter, map } from 'rxjs/operators';
 export class AppComponent {
   title = 'technex-mainsite';
 
-  constructor(private titleService: Title,private activatedRoute:ActivatedRoute,private router:Router) {}
+  constructor(
+    private titleService: Title,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit() {
     const appTitle = this.titleService.getTitle();
