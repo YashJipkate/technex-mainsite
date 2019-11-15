@@ -70,7 +70,6 @@ export class NavbarComponent implements OnInit {
   leftmenuItems: any[];
   rightmenuItems: any[];
   logomenuItems: any[];
- 
   constructor() { }
  
   ngOnInit() {
