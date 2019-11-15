@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
 
 declare interface RouteInfo {
   path: string;
@@ -73,13 +72,9 @@ export class NavbarComponent implements OnInit {
   logomenuItems: any[];
 
   
-  constructor(private titleService: Title) {}
+  constructor() { }
 
-  setDocTitle(title: string) {
-    console.log(this.titleService.getTitle());
-    this.titleService.setTitle(title);
-  }
-
+  
   ngOnInit() {
     this.leftmenuItems = LEFTROUTES.filter(menuItem => menuItem);
     this.rightmenuItems = RIGHTROUTES.filter(menuItemm => menuItemm);
