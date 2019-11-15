@@ -13,11 +13,6 @@ export class AppComponent {
 
   constructor(private titleService: Title,private activatedRoute:ActivatedRoute,private router:Router) {}
 
-  setDocTitle(title: string) {
-     console.log('current title:::::' + this.titleService.getTitle());
-     this.titleService.setTitle(title);
-  }
-
   ngOnInit() {
     const appTitle = this.titleService.getTitle();
     this.router

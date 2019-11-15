@@ -70,11 +70,9 @@ export class NavbarComponent implements OnInit {
   leftmenuItems: any[];
   rightmenuItems: any[];
   logomenuItems: any[];
-
-  
+ 
   constructor() { }
-
-  
+ 
   ngOnInit() {
     this.leftmenuItems = LEFTROUTES.filter(menuItem => menuItem);
     this.rightmenuItems = RIGHTROUTES.filter(menuItemm => menuItemm);
