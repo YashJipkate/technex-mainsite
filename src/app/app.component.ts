@@ -29,7 +29,7 @@ export class AppComponent {
           return appTitle;
         })
       ).subscribe((title: string) => {
-        this.titleService.setTitle(ttl);
+        this.titleService.setTitle(title);
       });
   }
 }
