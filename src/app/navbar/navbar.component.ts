@@ -13,7 +13,7 @@ export const LEFTROUTES: RouteInfo[] = [
     class: ''
   },
   {
-    path: '#',
+    path: 'exhibitions',
     title: 'EXHIBITIONS',
     class: ''
   },
@@ -28,7 +28,7 @@ export const LEFTROUTES: RouteInfo[] = [
     class: ''
   },
   {
-    path: '#',
+    path: 'events',
     title: 'EVENTS',
     class: ''
   },
@@ -36,7 +36,7 @@ export const LEFTROUTES: RouteInfo[] = [
 
 export const RIGHTROUTES: RouteInfo[] = [
   {
-    path: '#',
+    path: 'workshops',
     title: 'WORKSHOPS',
     class: ''
   },
@@ -60,7 +60,6 @@ export const LOGOROUTES: RouteInfo[] = [
   },
 ];
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -71,13 +70,10 @@ export class NavbarComponent implements OnInit {
   leftmenuItems: any[];
   rightmenuItems: any[];
   logomenuItems: any[];
-
   constructor() { }
-
   ngOnInit() {
     this.leftmenuItems = LEFTROUTES.filter(menuItem => menuItem);
     this.rightmenuItems = RIGHTROUTES.filter(menuItemm => menuItemm);
     this.logomenuItems = LOGOROUTES.filter(menuItemmm => menuItemmm);
-
   }  
 }

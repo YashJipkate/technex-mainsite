@@ -8,7 +8,11 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
   {
     path: 'sponsors',
+<<<<<<< HEAD
     title: 'SPONSORS',
+=======
+    title: 'Sponsors',
+>>>>>>> c6af1981c0c01a9a63ce79430fdedb3c4efdf2aa
     class: ''
   },
 ];
