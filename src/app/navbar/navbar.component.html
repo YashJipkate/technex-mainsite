@@ -15,6 +15,7 @@
 <li
 *ngFor="let leftmenuItem of leftmenuItems"
 >
+
 <a [routerLink]="[leftmenuItem.path]">
   <p id="ss">{{ leftmenuItem.title }}</p>
 </a>
@@ -52,4 +53,3 @@
 
 	<button class="cmn-toggle-switch"><span></span></button>
 </header>
-
