@@ -27,11 +27,6 @@ export const LEFTROUTES: RouteInfo[] = [
     title: 'THINK TALKS',
     class: ''
   },
-  {
-    path: 'events',
-    title: 'EVENTS',
-    class: ''
-  },
 ];
 
 export const RIGHTROUTES: RouteInfo[] = [
