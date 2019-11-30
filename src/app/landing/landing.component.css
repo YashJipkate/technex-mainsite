@@ -7,3 +7,29 @@
     color:white;
     display: inline;
 }
+
+#col{
+    color:black;
+}
+
+#btn{
+    
+    text-align: center;
+    color:black;
+       
+    font-display: bold;
+}
+
+.fa {
+    text-align: center;
+    text-decoration: none;
+    background: white;
+    height: 40px;
+  }
+  
+  
+  .fa-google {
+    background: rgb(245, 242, 242);
+   
+  }
+  
