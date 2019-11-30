@@ -308,7 +308,8 @@
                 '.header { background-color: '+ to +';}}'+
                 '.custom-popup input[type="submit"]:hover,'+
                 '.custom-popup .submit-wrap:hover i{ color: '+ to +';}'+
-				'.custom-popup .submit-wrap input {border-color: '+ to +';}';
+                '.custom-popup .submit-wrap input {border-color: '+ to +';}';
+
               
 				if ($('.base_bg_color_settings').length) {
 					$('.base_bg_color_settings').html(style2);
