@@ -493,16 +493,6 @@ jQuery(function() {
         return false;
     });
 
-    $(document).on("click", '.register-link1', function() {
-        var find_container = $('body');
-        if ($(this).closest('.vc_column_container')) {
-            find_container = $(this).closest('.vc_column_container');
-        }
-        find_container.find('.register-popup1').show('slow');
-
-        return false;
-    });
-
     $(window).on('resize', function() {
         sampleHeight(); 
 		isotopGalleryFunction();
