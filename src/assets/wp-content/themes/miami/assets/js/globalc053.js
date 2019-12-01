@@ -493,7 +493,6 @@ jQuery(function() {
         return false;
     });
 
-
     $(window).on('resize', function() {
         sampleHeight(); 
 		isotopGalleryFunction();
