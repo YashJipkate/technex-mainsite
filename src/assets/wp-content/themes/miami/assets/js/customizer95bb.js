@@ -144,6 +144,9 @@
                 '.custom-popup input[type="submit"],'+
                 '.custom-popup .submit-wrap:hover input,'+
                 '.custom-popup .submit-wrap i,'+
+                '.custom-popup input[type="submit"],'+
+                '.custom-popup .submit-wrap:hover input,'+
+                '.custom-popup .submit-wrap i,'+
                 '.popup-close,'+
                 '.popup-close:hover,'+
                 '.c-form-label,'+
