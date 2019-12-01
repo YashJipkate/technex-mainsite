@@ -31,7 +31,6 @@ export class LandingComponent implements OnInit {
   menuItems: any[];
   register_using_google = false;
   loginModel = new Login('');
-  
   register_email = '';
   register_firstname = '';
   register_lastname = '';
@@ -67,7 +66,6 @@ export class LandingComponent implements OnInit {
   login_user() {
     this._apiService.login(this.loginModel).subscribe(
       data => {
-        // console.log(data);
         this.cookieService.set('login_token', data.message);
         this.cookieService.set('logged', 'true');
       }
