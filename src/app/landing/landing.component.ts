@@ -6,6 +6,7 @@ import { ApiService } from "../services/api.service";
 import { ToastService } from "../services/toast.service";
 import { Login } from "../utilities/login";
 import { Register } from "../utilities/register";
+import { CookieService } from 'ngx-cookie-service';
 
 declare interface RouteInfo {
   path: string;
@@ -45,7 +46,8 @@ export class LandingComponent implements OnInit {
   login_email = '';
   login_password = '';
 
-  constructor(private _apiService: ApiService, private _toastService: ToastService) { }
+  constructor(private _apiService: ApiService, private _toastService: ToastService, private cookieService: CookieService) { }
+  
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -65,7 +67,9 @@ export class LandingComponent implements OnInit {
   login_user() {
     this._apiService.login(this.loginModel).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
+        this.cookieService.set('login_token', data.message);
+        this.cookieService.set('logged', 'true');
       }
     )
   }
@@ -108,7 +112,6 @@ export class LandingComponent implements OnInit {
     firebase.auth().createUserWithEmailAndPassword(this.register_email, this.register_password1).catch(function(error) {
     });
     var user = firebase.auth().currentUser;
-    console.log(user);
     if(user != null){
       var id_token = null;
       id_token = user.toJSON();
@@ -116,7 +119,6 @@ export class LandingComponent implements OnInit {
       this.loginModel.id_token = id_token;
       var email_id = user.email;
       var emailVerified = user.emailVerified;
-      console.log(emailVerified);
       if (emailVerified == false) {
         user.sendEmailVerification().then(function() {
           console.log("Email sent");
@@ -175,14 +177,10 @@ export class LandingComponent implements OnInit {
   register_password() {
     // TODO: Add validation here
     this.firebase_password_register();
-    console.log(this.loginModel.id_token);
     var registerModel = new Register(this.loginModel.id_token,this.register_firstname,this.register_lastname,Number(this.register_gender),Number(this.register_year),this.register_phone,this.register_college,this.register_city);
     this._apiService.register(registerModel).subscribe(
       data => {},
       error => {
-        var api_error = error;
-        console.log(error);
-        // console.log(api_error.error.non_field_errors[0]);
       }
     )
   }
@@ -196,7 +194,6 @@ export class LandingComponent implements OnInit {
       id_token = id_token.stsTokenManager.accessToken;
       this.loginModel.id_token = id_token;
     }
-    console.log(this.loginModel.id_token);
     this.login_user();
   }
 
