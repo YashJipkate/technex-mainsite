@@ -13,10 +13,8 @@
 }
 
 #btn{
-    
     text-align: center;
     color:black;
-       
     font-display: bold;
 }
 
@@ -25,10 +23,8 @@
     text-decoration: none;
     background: white;
     height: 40px;
-  }
-  
+}
   
   .fa-google {
     background: rgb(245, 242, 242);
-   
   }
