@@ -1,167 +1,189 @@
-<div id="home-3" class="container add_animation" >
-    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding"><div class="wpb_column vc_column_container vc_col-sm-12 "><div class="vc_column-inner "><div class="wpb_wrapper">
-<div class="banner-wrap ">
-            <img src="assets/wp-content/uploads/2016/10/banner-1.jpg"
-     alt=""
-     class="s-img-switch">
-        <div class="content">
-                                    <h1 class="title animatedBlock ">TECHNEX 2020</h1>
-                                    <div class="text animatedBlock"><p>The Annual Techno-Management Fest
-                                        <br>IIT (BHU) Varanasi
-                                        <br>14th to 16th Feburary</p></div>
-<br><br>
+<div id="home-3" class="container add_animation">
+    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
+        class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+        <div class="wpb_column vc_column_container vc_col-sm-12 ">
+            <div class="vc_column-inner ">
+                <div class="wpb_wrapper">
+                    <div class="banner-wrap ">
+                        <img src="assets/wp-content/uploads/2016/10/banner-1.jpg" alt="" class="s-img-switch">
+                        <div class="content">
+                            <h1 class="title animatedBlock ">TECHNEX 2020</h1>
+                            <div class="text animatedBlock">
+                                <p>The Annual Techno-Management Fest
+                                    <br>IIT (BHU) Varanasi
+                                    <br>14th to 16th Feburary</p>
+                            </div>
+                            <br><br>
 
-<a href="" class="gradient-btn register-link">
-				
-    <svg preserveAspectRatio="none" class="border-with-grad">
+                            <a href="" class="gradient-btn register-link">
+
+                                <svg preserveAspectRatio="none" class="border-with-grad">
                                     <defs>
-            <linearGradient id='border-gradient' gradientTransform='rotate(0)' gradientUnits='objectBoundingBox'>
+                                        <linearGradient id='border-gradient' gradientTransform='rotate(0)'
+                                            gradientUnits='objectBoundingBox'>
                                             <stop offset='0%' stop-color='#07a5ff' />
                                             <stop offset='100%' stop-color='#e315d2' />
                                         </linearGradient>
-            </defs>
-                              <path d='M26,52 a24,24 0 0,1 0,-48 h180 a24,24 0 1,1 0,48 h-180' />
-    </svg>
-    <span class="text-label">REGISTER || LOGIN </span>
+                                    </defs>
+                                    <path d='M26,52 a24,24 0 0,1 0,-48 h180 a24,24 0 1,1 0,48 h-180' />
+                                </svg>
+                                <span class="text-label">REGISTER || LOGIN </span>
 
-</a>
+                            </a>
 
- <br>
+                            <br>
 
-                    <a class="gradient-btn register-link">
+                            <a class="gradient-btn register-link">
 
-    
-    <span class="text-label">REGISTRATIONS OPENING SOON</span>
-</a>
-<br>
-<br>
-                    <a id="same" href="https://ca.technex.in" class="all_events">
-       <p id="same"> CA Portal | </p> </a> 
-        
-            
-        <a
-        *ngFor="let menuItem of menuItems"
-        >
-        <a [routerLink]="[menuItem.path]">
-          <p id="same" >{{ menuItem.title }}</p>
-        </a>
-        
-    </a>	
-					
-					
 
-            </div>
-       
+                                <span class="text-label">REGISTRATIONS OPENING SOON</span>
+                            </a>
+                            <br>
+                            <br>
+                            <a id="same" href="https://ca.technex.in" class="all_events">
+                                <p id="same"> CA Portal | </p>
+                            </a>
+                            <a *ngFor="let menuItem of menuItems">
+                                <a [routerLink]="[menuItem.path]">
+                                    <p id="same">{{ menuItem.title }}</p>
+                                </a>
+                            </a>
+                        </div>
+                        <div class="register-popup custom-popup">
+                            <div class="popup-close"><i class="fa"></i>X</div>
+                            <div role="form" class="wpcf7" id="wpcf7-f142-o1" lang="en-US" dir="ltr">
+                                <div class="screen-reader-response"></div>
+                                <div class="wpcf7-form">
+                                    <div class="c-form-group" *ngIf="register_using_google == false">
+                                        <div class="c-form-label">
+                                            <p id="btn">EMAIL</p>
+                                        </div>
+                                        <p><span class="wpcf7-form-control-wrap your-name"><input type="text"
+                                                    name="your-name" value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                    aria-required="true" aria-invalid="false" /></span></p>
+                                    </div>
+                                    <div class="c-form-group" *ngIf="register_using_google == false">
+                                        <div class="c-form-label">
+                                            <p id="btn">PASSWORD</p>
+                                        </div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                                    value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
+                                                    aria-required="true" aria-invalid="false" /></span></p>
+                                    </div>
 
-     
-    <div class="register-popup custom-popup">
-            <div class="popup-close"><i class="fa"></i>X</div>
-            <div role="form" class="wpcf7" id="wpcf7-f142-o1" lang="en-US" dir="ltr">
-        <div class="screen-reader-response"></div>
-        <form action="http://w2.themedemo.co/miami/home-3/#wpcf7-f142-o1" method="post" class="wpcf7-form" novalidate="novalidate">
-        <div style="display: none;">
-        <input type="hidden" name="_wpcf7" value="142" />
-        <input type="hidden" name="_wpcf7_version" value="5.1.4" />
-        <input type="hidden" name="_wpcf7_locale" value="en_US" />
-        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f142-o1" />
-        <input type="hidden" name="_wpcf7_container_post" value="0" />
-        </div>
-       
-        <h1 id="he" >LOGIN </h1>
-        <div class="c-form-group">
-        <div class="c-form-label"><p id="btn">EMAIL</p></div>
-        <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
-        <div class="c-form-group">
-        <div class="c-form-label"><p id="btn">PASSWORD</p></div>
-        <p><span class="wpcf7-form-control-wrap phone"><input type="text" name="password" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" /></span></p></div>
-    
-        <div class="submit-wrapper">
-        <div class="submit-wrap">        <input type="submit" value="LOGIN" class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />        <i class="fa fa-angle-right" aria-hidden="true"></i>    </div>
-        </div>
+                                    <div class="submit-wrapper" *ngIf="register_using_google == false">
+                                        <div class="submit-wrap"> <input type="submit" value="LOGIN"
+                                                class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+                                    </div>
 
-        <h1 id="he" >NO ACCOUNT? - REGISTER ! </h1>
 
-      
-        <div class="submit-wrapper">
-                <div class="submit-wrap">    <input type="submit" value="REGISTER WITH GOOGLE" class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />        <i class="fa fa-angle-right" aria-hidden="true"></i>    </div>
-                </div>
+                                    <div class="submit-wrapper" *ngIf="register_using_google == false">
+                                        <div class="submit-wrap"> <input type="submit" (click)="firebase_google_login()"
+                                                value="CONNECT WITH GOOGLE"
+                                                class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+                                    </div>
 
-                <div class="c-form-group">
-                        <div id="btn" class="c-form-label">First Name</div>
-                        <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
-   
-                        <div class="c-form-group">
+                                    <div class="c-form-group">
+                                        <div class="c-form-label">First Name</div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                                    value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_firstname" /></span></p>
+                                    </div>
+                                    <div class="c-form-group">
+                                        <div class="c-form-label">Last Name</div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                                    value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_lastname" /></span></p>
+                                    </div>
+                                    <div class="c-form-group" *ngIf="register_using_google == false">
+                                        <div class="c-form-label">Email</div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="text" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" [(ngModel)]="register_email" /></span></p>
+                                    </div>
+                                    <div class="c-form-group" *ngIf="register_using_google == true">
+                                        <div class="c-form-label">Email</div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="text" disabled name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" [(ngModel)]="register_email" /></span></p>
+                                    </div>
+                                    <div class="c-form-group" *ngIf="register_using_google == false">
+                                        <div class="c-form-label">Password</div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                                    value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_password1" /></span></p>
+                                    </div>
+                                    <div class="c-form-group" *ngIf="register_using_google == false">
+                                        <div class="c-form-label">Password Again</div>
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                                    value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_password2" /></span></p>
+                                    </div>
+                                    <div class="c-form-group">
+                                        <div class="c-form-label">College</div>
+                                        <p><span class="wpcf7-form-control-wrap your-name"><input type="text"
+                                                    name="your-name" value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_college" /></span></p>
+                                    </div>
+                                    <div class="c-form-group">
+                                        <div class="c-form-label">City</div>
+                                        <p><span class="wpcf7-form-control-wrap your-email"><input type="text"
+                                                    name="your-email" value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_city" /></span></p>
+                                    </div>
+                                    <div class="c-form-group">
+                                        <div class="c-form-label">Phone</div>
+                                        <p><span class="wpcf7-form-control-wrap your-email"><input type="text"
+                                                    name="your-email" value="" size="40"
+                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                    aria-required="true" aria-invalid="false" [(ngModel)]="register_phone" /></span></p>
+                                    </div>
+                                    <div class="c-form-group date-wrap">
+                                        <div class="c-form-label">Gender</div>
+                                        <p><span class="wpcf7-form-control-wrap date"><select type="number" name="date"
+                                                    value=""  class="wpcf7-form-control wpcf7-text"
+                                                    aria-invalid="false" [(ngModel)]="register_gender" >
+                                                    <option value = 0 > Male </option>
+                                                    <option value = 1 > Female </option>
+                                                    <option value = 2 > Others/Not Specified </option>
+                                                </select></span></p>
+                                    </div>
+                                    <div class="c-form-group amount-wrap">
+                                        <div class="c-form-label">Year</div>
+                                        <p><span class="wpcf7-form-control-wrap amount"><select type="number"
+                                                    name="amount" value=""
+                                                    class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number amount"
+                                                   [(ngModel)]="register_year" aria-invalid="false" >
+                                                <option value = 1 > 1st year </option>
+                                                <option value = 2 > 2nd year </option>
+                                                <option value = 3 > 3rd year </option>
+                                                <option value = 4 > 4th year </option>
+                                                <option value = 5 > 5th year </option>
+                                                <option value = 8 > M.Tech </option>
+                                                <option value = 7 > Phd </option>
+                                                <option value = 6 > Passout (Only for Startup Fair) </option>
+                                                </select></span></p>
+                                    </div>
 
-                                                    <div class="c-form-group date-wrap">
-                        <div id="btn" class="c-form-label">Last Name</div>
-                        <p><span class="wpcf7-form-control-wrap date">
-                        <input type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
-                         </span></p></div>
-
-                         <div class="c-form-group date-wrap">
-                                <div id="btn" class="c-form-label">Gender</div>
-                                <p><span class="wpcf7-form-control-wrap date">
-                                <input type="text" name="gender" value="" size="3" class="wpcf7-form-control wpcf7-text" list="gname" aria-invalid="false" />
-                                <datalist id="gname">
-                                        <option value="Male">
-                                        <option value="Female">
-                                        <option value="Don't want to disclose">
-                                      </datalist>
-                                 </span></p></div>
-                                              
+                                    <div class="submit-wrapper">
+                                        <div class="submit-wrap"> <input type="submit" (click)="register()" value="REGISTER"
+                                                class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+                                    </div>
+                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="c-form-group">
-
-                            <div class="c-form-group date-wrap">
-                                    <div id="btn" class="c-form-label">Phone</div>
-                                    <p><span class="wpcf7-form-control-wrap date">
-                                    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
-                                     </span></p></div>
-
-
-                                     <div class="c-form-group date-wrap">
-                                            <div id="btn" class="c-form-label">City</div>
-                                            <p><span class="wpcf7-form-control-wrap date">
-                                            <input type="text" name="city" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
-                                             </span></p></div>
-                      
-</div>
-
-<div class="c-form-group">
-
-     <div class="c-form-group date-wrap">
-<div id="btn" class="c-form-label">College</div>
-<p><span class="wpcf7-form-control-wrap date">
-<input type="text" name="college" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
-</span></p></div>
-
-<div class="c-form-group date-wrap">
-<div id="btn" class="c-form-label">Year</div>
-<p><span class="wpcf7-form-control-wrap date">
-<input type="number" name="year" value="" size="40" list="Yname" aria-invalid="false" />
-<datalist id="Yname">
-<option value="1">
-<option value="2">
- <option value="3">
-   <option value="4"> 
-        <option value="5">                 
-</datalist>
-</span></p></div>
-  
-</div>
-
-             
-
-        <div class="submit-wrapper">
-                <div class="submit-wrap">    <input type="submit" value="REGISTER" class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />        <i class="fa fa-angle-right" aria-hidden="true"></i>    </div>
                 </div>
-        
-        <div class="wpcf7-response-output wpcf7-display-none"></div></form></div>		
-    		</div>
-        
- 
+            </div>
+        </div>
     </div>
-
-</div></div></div></div><div class="vc_row-full-width"></div>
+    <div class="vc_row-full-width"></div>
 </div>
