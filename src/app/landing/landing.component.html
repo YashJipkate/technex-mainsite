@@ -66,17 +66,20 @@
         <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f142-o1" />
         <input type="hidden" name="_wpcf7_container_post" value="0" />
         </div>
-
+       
+        <h1 id="he" >LOGIN </h1>
         <div class="c-form-group">
-        <div class="c-form-label"><p id="btn">USERNAME</p></div>
+        <div class="c-form-label"><p id="btn">EMAIL</p></div>
         <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
         <div class="c-form-group">
         <div class="c-form-label"><p id="btn">PASSWORD</p></div>
-        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" /></span></p></div>
+        <p><span class="wpcf7-form-control-wrap phone"><input type="text" name="password" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" /></span></p></div>
     
         <div class="submit-wrapper">
         <div class="submit-wrap">        <input type="submit" value="LOGIN" class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />        <i class="fa fa-angle-right" aria-hidden="true"></i>    </div>
         </div>
+
+        <h1 id="he" >NO ACCOUNT? - REGISTER ! </h1>
 
       
         <div class="submit-wrapper">
@@ -84,29 +87,74 @@
                 </div>
 
                 <div class="c-form-group">
-                        <div class="c-form-label">First Name</div>
-                        <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
+                        <div id="btn" class="c-form-label">First Name</div>
+                        <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
+   
                         <div class="c-form-group">
-                       <div class="c-form-label">Last Name</div>
-                     <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
-                      <div class="c-form-group">
-                     <div class="c-form-label">Year</div>
-                       <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
-                        <div class="c-form-group">
-                        <div class="c-form-label">EMAIL</div>
-                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" /></span></p></div>
-                        <div class="c-form-group">
-                        <div class="c-form-label">City</div>
-                        <p><span class="wpcf7-form-control-wrap your-email"><input type="text" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span></p></div>
-                        <div class="c-form-group date-wrap">
-                        <div class="c-form-label">Gender</div>
-                        <p><span class="wpcf7-form-control-wrap date"><input type="text" name="date" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" /></span></p></div>
-                        <div class="c-form-group amount-wrap">
-                        <div class="c-form-label">College</div>
-                        <p><span class="wpcf7-form-control-wrap amount"><input type="number" name="amount" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number amount" min="1" max="100" aria-invalid="false" /></span></p></div>
+
+                                                    <div class="c-form-group date-wrap">
+                        <div id="btn" class="c-form-label">Last Name</div>
+                        <p><span class="wpcf7-form-control-wrap date">
+                        <input type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
+                         </span></p></div>
+
+                         <div class="c-form-group date-wrap">
+                                <div id="btn" class="c-form-label">Gender</div>
+                                <p><span class="wpcf7-form-control-wrap date">
+                                <input type="text" name="gender" value="" size="3" class="wpcf7-form-control wpcf7-text" list="gname" aria-invalid="false" />
+                                <datalist id="gname">
+                                        <option value="Male">
+                                        <option value="Female">
+                                        <option value="Don't want to disclose">
+                                      </datalist>
+                                 </span></p></div>
+                                              
+                    </div>
+
+                    <div class="c-form-group">
+
+                            <div class="c-form-group date-wrap">
+                                    <div id="btn" class="c-form-label">Phone</div>
+                                    <p><span class="wpcf7-form-control-wrap date">
+                                    <input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
+                                     </span></p></div>
+
+
+                                     <div class="c-form-group date-wrap">
+                                            <div id="btn" class="c-form-label">City</div>
+                                            <p><span class="wpcf7-form-control-wrap date">
+                                            <input type="text" name="city" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
+                                             </span></p></div>
+                      
+</div>
+
+<div class="c-form-group">
+
+     <div class="c-form-group date-wrap">
+<div id="btn" class="c-form-label">College</div>
+<p><span class="wpcf7-form-control-wrap date">
+<input type="text" name="college" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" />
+</span></p></div>
+
+<div class="c-form-group date-wrap">
+<div id="btn" class="c-form-label">Year</div>
+<p><span class="wpcf7-form-control-wrap date">
+<input type="number" name="year" value="" size="40" list="Yname" aria-invalid="false" />
+<datalist id="Yname">
+<option value="1">
+<option value="2">
+ <option value="3">
+   <option value="4"> 
+        <option value="5">                 
+</datalist>
+</span></p></div>
+  
+</div>
+
+             
 
         <div class="submit-wrapper">
-                <div class="submit-wrap">    <input type="submit" value="NO ACCOUNT ? - REGISTER" class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />        <i class="fa fa-angle-right" aria-hidden="true"></i>    </div>
+                <div class="submit-wrap">    <input type="submit" value="REGISTER" class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />        <i class="fa fa-angle-right" aria-hidden="true"></i>    </div>
                 </div>
         
         <div class="wpcf7-response-output wpcf7-display-none"></div></form></div>		
