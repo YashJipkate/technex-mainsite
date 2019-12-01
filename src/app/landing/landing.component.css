@@ -12,7 +12,6 @@
     color:black;
 }
 
-<<<<<<< HEAD
 #he{
     color:rgb(203, 229, 255);
     font-style: italic;
@@ -22,17 +21,19 @@
     
 }
 
+#he1{
+    color:rgb(5, 5, 5);
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+    
+}
 
 #btn{
     
     text-align: center;
     color:black;
-
-=======
-#btn{
-    text-align: center;
-    color:black;
->>>>>>> a3da98a0ee024568e9f606547ae3003f3ecde9dd
     font-display: bold;
 }
 
@@ -41,7 +42,6 @@
     text-decoration: none;
     background: white;
     height: 40px;
-<<<<<<< HEAD
   }
   
   
@@ -50,10 +50,3 @@
    
   }
   
-=======
-}
-  
-  .fa-google {
-    background: rgb(245, 242, 242);
-  }
->>>>>>> a3da98a0ee024568e9f606547ae3003f3ecde9dd
