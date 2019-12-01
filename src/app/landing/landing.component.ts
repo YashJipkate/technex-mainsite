@@ -44,10 +44,19 @@ export class LandingComponent implements OnInit {
 
   login_email = '';
   login_password = '';
+  isLoggedIn: string;
+  isLoggedInBool: boolean;
 
   constructor(
     private _apiService: ApiService, private _toastService: ToastService,
-    private cookieService: CookieService) { }
+    private cookieService: CookieService) {
+      this.isLoggedIn = this.cookieService.get('logged');
+      if (this.isLoggedIn === 'true') {
+        this.isLoggedInBool = true;
+      } else {
+        this.isLoggedInBool = false;
+      }
+    }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
