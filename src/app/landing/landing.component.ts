@@ -6,6 +6,7 @@ import { ApiService } from "../services/api.service";
 import { ToastService } from "../services/toast.service";
 import { Login } from "../utilities/login";
 import { Register } from "../utilities/register";
+import { CookieService } from 'ngx-cookie-service';
 
 declare interface RouteInfo {
   path: string;
@@ -30,7 +31,6 @@ export class LandingComponent implements OnInit {
   menuItems: any[];
   register_using_google = false;
   loginModel = new Login('');
-
   register_email = '';
   register_firstname = '';
   register_lastname = '';
@@ -42,7 +42,11 @@ export class LandingComponent implements OnInit {
   register_gender = 0;
   register_year = 1;
 
-  constructor(private _apiService: ApiService, private _toastService: ToastService) { }
+  login_email = '';
+  login_password = '';
+
+  constructor(private _apiService: ApiService, private _toastService: ToastService, private cookieService: CookieService) { }
+  
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -57,14 +61,13 @@ export class LandingComponent implements OnInit {
       measurementId: "G-BPPJCTCVT6"
     };
     firebase.initializeApp(firebaseConfig);
-  }  
-
-  // TODO - Add email-password authentication functions
+  }
 
   login_user() {
     this._apiService.login(this.loginModel).subscribe(
       data => {
-        console.log(data);
+        this.cookieService.set('login_token', data.message);
+        this.cookieService.set('logged', 'true');
       }
     )
   }
@@ -102,9 +105,66 @@ export class LandingComponent implements OnInit {
     });
   }
 
+  firebase_password_register() {
+    var api_error = null;
+    firebase.auth().createUserWithEmailAndPassword(this.register_email, this.register_password1).catch(function(error) {
+    });
+    var user = firebase.auth().currentUser;
+    if(user != null){
+      var id_token = null;
+      id_token = user.toJSON();
+      id_token = id_token.stsTokenManager.accessToken;
+      this.loginModel.id_token = id_token;
+      var email_id = user.email;
+      var emailVerified = user.emailVerified;
+      if (emailVerified == false) {
+        user.sendEmailVerification().then(function() {
+          console.log("Email sent");
+        }).catch(function(error) {});
+      }
+    }
+  }
+
   register_google() {
-    // TODO: Add validation here
     var registerModel = new Register(this.loginModel.id_token,this.register_firstname,this.register_lastname,Number(this.register_gender),Number(this.register_year),this.register_phone,this.register_college,this.register_city);
+    // if (registerModel.password !== this.confirmPassword) {
+    //   this._toastService.error_toast('Error', 'Passwords do not match!');
+    //   this.confirmPassword = '';
+    //   this.registerModel.password = '';
+    //   return false;
+    // }
+
+    // if (this.registerModel.password.length < 6) {
+    //   this._toastService.error_toast('Error', 'Password should be atleast 6 characters long');
+    //   this.confirmPassword = '';
+    //   this.registerModel.password = '';
+    //   return false;
+    // }
+
+    // const is_num_pin_code = /^\d+$/.test(this.pinCode_string);
+
+    // if (!is_num_pin_code) {
+    //   this._toastService.error_toast('Error', 'Pincode should be a number');
+    //   return false;
+    // } else {
+    //   this.registerModel.pinCode = Number(this.pinCode_string);
+    // }
+
+    // const isnum_mobile_number = /^\d+$/.test(this.registerModel.mobile_number);
+    // const isnum_whatsapp_number = /^\d+$/.test(this.registerModel.whatsapp_number);
+
+    // if (!isnum_mobile_number || !isnum_whatsapp_number) {
+    //   this._toastService.error_toast('Error', 'Enter a valid contact no.');
+    //   return false;
+    // }
+
+    // if (this.registerModel.mobile_number.length !== 10 ||
+    //   this.registerModel.whatsapp_number.length !== 10) {
+    //   this._toastService.error_toast('Error', 'Mobile no. should have 10 digits');
+    //   return false;
+    // }
+
+    // return true;
     this._apiService.register(registerModel).subscribe(
       data => {
         this.login_user();
@@ -113,7 +173,26 @@ export class LandingComponent implements OnInit {
   }
 
   register_password() {
-    console.log("Password Registration");
+    // TODO: Add validation here
+    this.firebase_password_register();
+    var registerModel = new Register(this.loginModel.id_token,this.register_firstname,this.register_lastname,Number(this.register_gender),Number(this.register_year),this.register_phone,this.register_college,this.register_city);
+    this._apiService.register(registerModel).subscribe(
+      data => {},
+      error => {
+      }
+    )
+  }
+
+  password_login() {
+    firebase.auth().signInWithEmailAndPassword(this.login_email, this.login_password).catch(function(error) {});
+    var user = firebase.auth().currentUser;
+    if(user != null){
+      var id_token = null;
+      id_token = user.toJSON();
+      id_token = id_token.stsTokenManager.accessToken;
+      this.loginModel.id_token = id_token;
+    }
+    this.login_user();
   }
 
   register() {
