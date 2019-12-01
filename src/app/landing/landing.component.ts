@@ -44,9 +44,19 @@ export class LandingComponent implements OnInit {
 
   login_email = '';
   login_password = '';
+  isLoggedIn: string;
+  isLoggedInBool: boolean;
 
-  constructor(private _apiService: ApiService, private _toastService: ToastService, private cookieService: CookieService) { }
-  
+  constructor(
+    private _apiService: ApiService, private _toastService: ToastService,
+    private cookieService: CookieService) {
+      this.isLoggedIn = this.cookieService.get('logged');
+      if (this.isLoggedIn === 'true') {
+        this.isLoggedInBool = true;
+      } else {
+        this.isLoggedInBool = false;
+      }
+    }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -68,6 +78,7 @@ export class LandingComponent implements OnInit {
       data => {
         this.cookieService.set('login_token', data.message);
         this.cookieService.set('logged', 'true');
+        window.location.href = 'https://dashboard.technex.in/';
       }
     )
   }
@@ -126,7 +137,15 @@ export class LandingComponent implements OnInit {
   }
 
   register_google() {
-    var registerModel = new Register(this.loginModel.id_token,this.register_firstname,this.register_lastname,Number(this.register_gender),Number(this.register_year),this.register_phone,this.register_college,this.register_city);
+    const registerModel = new Register(
+      this.loginModel.id_token,
+      this.register_firstname,
+      this.register_lastname,
+      Number(this.register_gender),
+      Number(this.register_year),
+      this.register_phone,
+      this.register_college,
+      this.register_city);
     // if (registerModel.password !== this.confirmPassword) {
     //   this._toastService.error_toast('Error', 'Passwords do not match!');
     //   this.confirmPassword = '';
@@ -175,7 +194,15 @@ export class LandingComponent implements OnInit {
   register_password() {
     // TODO: Add validation here
     this.firebase_password_register();
-    var registerModel = new Register(this.loginModel.id_token,this.register_firstname,this.register_lastname,Number(this.register_gender),Number(this.register_year),this.register_phone,this.register_college,this.register_city);
+    const registerModel = new Register(
+      this.loginModel.id_token,
+      this.register_firstname,
+      this.register_lastname,
+      Number(this.register_gender),
+      Number(this.register_year),
+      this.register_phone,
+      this.register_college,
+      this.register_city);
     this._apiService.register(registerModel).subscribe(
       data => {},
       error => {
@@ -184,10 +211,11 @@ export class LandingComponent implements OnInit {
   }
 
   password_login() {
-    firebase.auth().signInWithEmailAndPassword(this.login_email, this.login_password).catch(function(error) {});
-    var user = firebase.auth().currentUser;
+    firebase.auth().signInWithEmailAndPassword(
+      this.login_email, this.login_password).catch((error) => {});
+    const user = firebase.auth().currentUser;
     if(user != null){
-      var id_token = null;
+      let id_token = null;
       id_token = user.toJSON();
       id_token = id_token.stsTokenManager.accessToken;
       this.loginModel.id_token = id_token;
@@ -196,7 +224,7 @@ export class LandingComponent implements OnInit {
   }
 
   register() {
-    if (this.register_using_google == true) {
+    if (this.register_using_google === true) {
       this.register_google();
     } else {
       this.register_password();
