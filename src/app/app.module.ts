@@ -9,6 +9,7 @@ import { EventsComponent } from './events/events.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     BrowserAnimationsModule,
     MatProgressBarModule
   ],
-  providers: [Title],
+  providers: [
+    Title,
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

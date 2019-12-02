@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 declare interface RouteInfo {
   path: string;
@@ -65,10 +66,19 @@ export class NavbarComponent implements OnInit {
   leftmenuItems: any[];
   rightmenuItems: any[];
   logomenuItems: any[];
-  constructor() { }
+  isLoggedIn: string;
+  isLoggedInBool: boolean;
+  constructor(private cookieService: CookieService) {
+    this.isLoggedIn = this.cookieService.get('logged');
+    if (this.isLoggedIn === 'true') {
+      this.isLoggedInBool = true;
+    } else {
+      this.isLoggedInBool = false;
+    }
+  }
   ngOnInit() {
     this.leftmenuItems = LEFTROUTES.filter(menuItem => menuItem);
     this.rightmenuItems = RIGHTROUTES.filter(menuItemm => menuItemm);
     this.logomenuItems = LOGOROUTES.filter(menuItemmm => menuItemmm);
-  }  
+  }
 }
