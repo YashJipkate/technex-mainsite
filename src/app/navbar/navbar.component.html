@@ -20,11 +20,6 @@
 </a>
 
 </li>
-<li>
-	<a href="/events">
-		<p id="ss">EVENTS</p>
-	</a>
-</li>
 </ul>
 			<div class="logo-block">
 				<a class="logo" [routerLink]="[logomenuItems[0].path]">
@@ -44,9 +39,10 @@
 
 					<li>
 					
-					<a >
-					  <p id=ss1>REGISTRATIONS CLOSED</p>
-					</a>	
+					<a *ngIf="isLoggedInBool" href="https://dashboard.technex.in/">
+					  <p id=ss1>Dashboard</p>
+					</a>
+					<a *ngIf="!isLoggedInBool">Registrations Open!</a>
 
 					</li>
 					

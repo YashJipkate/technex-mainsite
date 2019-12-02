@@ -12,6 +12,22 @@
     color:black;
 }
 
+#he{
+    color:rgb(203, 229, 255);
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 1000;
+}
+
+#he1{
+    color:rgb(5, 5, 5);
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
 #btn{
     text-align: center;
     color:black;

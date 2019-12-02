@@ -7,6 +7,7 @@ import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EventsComponent } from './events/events.component';
 import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [Title],
+  providers: [
+    Title,
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
