@@ -16,20 +16,18 @@
   text-align: center;
 }
 
-#set{
+#set {
   width:auto;
   height: auto;;
   max-width: 490px;
   max-height:590px;
-
 }
 
-#set1{
+#set1 {
   width:auto;
   height: auto;;
   max-width: 370px;
   max-height: 490px;
-
 }
 
 .fade-in{

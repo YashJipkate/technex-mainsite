@@ -21,12 +21,10 @@
   width:auto;
   height: auto;;
   min-width: 300px;
-  
   max-height:350px;
-
 }
 
-#set1{
+#set1 {
   width:auto;
   height: auto;;
   max-width: 390px;
@@ -73,6 +71,4 @@
   margin-right: 25%;
   width: 70%;
   height:100px;
- 
-  
 }
