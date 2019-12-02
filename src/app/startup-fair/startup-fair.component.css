@@ -6,7 +6,11 @@
   overflow: hidden;
 }
 
-#test{
+#bac {
+  background-image: "/assets/wp-content/uploads/2016/10/banner-1.jpg";
+}
+
+#test {
   font-size: 40px;
   text-align: center;
 }
@@ -14,6 +18,13 @@
 #test1{
   font-size: 20px;
   text-align: center;
+}
+
+#set {
+  width:auto;
+  height: auto;;
+  max-width: 525px;
+  max-height: 490px;
 }
 
 .fade-in{
