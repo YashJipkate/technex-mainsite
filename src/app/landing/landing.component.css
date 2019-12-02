@@ -8,67 +8,77 @@
     display: inline;
 }
 
-@-webkit-keyframes heartBeat {
-    0% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+@-webkit-keyframes flipInX {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
     }
   
-    14% {
-      -webkit-transform: scale(1.3);
-      transform: scale(1.3);
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
     }
   
-    28% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
     }
   
-    42% {
-      -webkit-transform: scale(1.3);
-      transform: scale(1.3);
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
     }
   
-    70% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes heartBeat {
-    0% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  
-    14% {
-      -webkit-transform: scale(1.3);
-      transform: scale(1.3);
-    }
-  
-    28% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  
-    42% {
-      -webkit-transform: scale(1.3);
-      transform: scale(1.3);
-    }
-  
-    70% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
     }
   }
   
-  .heartBeat {
-    -webkit-animation-name: heartBeat;
-    animation-name: heartBeat;
-    -webkit-animation-duration: 1.3s;
-    animation-duration: 1.3s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+  @keyframes flipInX {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+  
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+  
+  .flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
     animation-iteration-count: infinite;
   }
 body{
