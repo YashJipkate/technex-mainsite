@@ -16,6 +16,20 @@
   text-align: center;
 }
 
+#set {
+  width:auto;
+  height: auto;;
+  max-width: 490px;
+  max-height:590px;
+}
+
+#set1 {
+  width:auto;
+  height: auto;;
+  max-width: 370px;
+  max-height: 490px;
+}
+
 .fade-in{
   animation: animationFrames ease 1s;
   animation-iteration-count: 1;

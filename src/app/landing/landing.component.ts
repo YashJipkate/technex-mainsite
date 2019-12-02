@@ -76,11 +76,11 @@ export class LandingComponent implements OnInit {
   login_user() {
     this._apiService.login(this.loginModel).subscribe(
       data => {
-        this.cookieService.set('login_token', data.message);
-        this.cookieService.set('logged', 'true');
+        this.cookieService.set('login_token', data.message, 200, undefined, '.technex.in');
+        this.cookieService.set('logged', 'true', 200, undefined, '.technex.in');
         window.location.href = 'https://dashboard.technex.in/';
       }
-    )
+    );
   }
 
   firebase_google_login() {
