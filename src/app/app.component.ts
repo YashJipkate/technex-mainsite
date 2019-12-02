@@ -6,6 +6,8 @@ import {
 } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 
+declare let ga: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,11 +46,13 @@ export class AppComponent {
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
           this.loading = true;
-        } else if (
-            event instanceof NavigationEnd ||
-            event instanceof NavigationCancel
-          ) {
+        } else if (event instanceof NavigationEnd) {
           this.loading = false;
+          ga('set', 'page', event.urlAfterRedirects);
+          ga('send', 'pageview');
+        }
+        else if (event instanceof NavigationCancel) {
+          this.loading = true;
         }
       });
   }
