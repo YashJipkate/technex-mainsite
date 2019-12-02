@@ -81,7 +81,7 @@
     animation-iteration-count: infinite;
   }
   
-body{
+body {
     background-image: url('/assets/wp-content/uploads/2016/10/banner-1.gif');
     background-size: cover;
     height: 100vh;
