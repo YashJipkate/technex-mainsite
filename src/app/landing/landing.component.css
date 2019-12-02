@@ -81,3 +81,39 @@ body{
     padding:0;
     margin:0;
 }
+#col{
+    color:black;
+}
+
+#he{
+    color:rgb(203, 229, 255);
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 1000;
+}
+
+#he1{
+    color:rgb(5, 5, 5);
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#btn{
+    text-align: center;
+    color:black;
+    font-display: bold;
+}
+
+.fa {
+    text-align: center;
+    text-decoration: none;
+    background: white;
+    height: 40px;
+}
+  
+  .fa-google {
+    background: rgb(245, 242, 242);
+  }
