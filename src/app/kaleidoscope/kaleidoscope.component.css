@@ -17,15 +17,14 @@
 }
 
 
-#set{
+#set {
   width:auto;
   height: auto;;
   max-width: 470px;
   min-height: 500px;
-
 }
 
-.fade-in{
+.fade-in {
   animation: animationFrames ease 1s;
   animation-iteration-count: 1;
   transform-origin: 50% 50%;

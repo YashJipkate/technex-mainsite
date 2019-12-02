@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import {
+  Router, NavigationEnd, ActivatedRoute, NavigationStart,
+  NavigationCancel
+} from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 
 @Component({
@@ -9,12 +12,15 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  loading = false;
   title = 'technex-mainsite';
 
   constructor(
     private titleService: Title,
     private activatedRoute: ActivatedRoute,
-    private router: Router) {}
+    private router: Router) {
+      this.loading = true;
+    }
 
   ngOnInit() {
     const appTitle = this.titleService.getTitle();
@@ -30,6 +36,20 @@ export class AppComponent {
         })
       ).subscribe((title: string) => {
         this.titleService.setTitle(title);
+      });
+  }
+
+  ngAfterViewInit() {
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          this.loading = true;
+        } else if (
+            event instanceof NavigationEnd ||
+            event instanceof NavigationCancel
+          ) {
+          this.loading = false;
+        }
       });
   }
 }

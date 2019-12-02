@@ -16,12 +16,11 @@
   text-align: center;
 }
 
-#set{
+#set {
   width:auto;
   height: auto;;
   max-width: 365px;
   max-height: 250px;
-
 }
 
 .fade-in{
