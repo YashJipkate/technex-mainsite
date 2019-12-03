@@ -7,6 +7,7 @@ import { ToastService } from "../services/toast.service";
 import { Login } from "../utilities/login";
 import { Register } from "../utilities/register";
 import { CookieService } from 'ngx-cookie-service';
+import {GoogleAnalyticsEventsService} from "../services/google-analytics-events.service";
 
 declare interface RouteInfo {
   path: string;
@@ -49,7 +50,8 @@ export class LandingComponent implements OnInit {
 
   constructor(
     private _apiService: ApiService, private _toastService: ToastService,
-    private cookieService: CookieService) {
+    private cookieService: CookieService,
+    public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {
       this.isLoggedIn = this.cookieService.get('logged');
       if (this.isLoggedIn === 'true') {
         this.isLoggedInBool = true;
@@ -95,6 +97,7 @@ export class LandingComponent implements OnInit {
       this.loginModel.id_token = id_token;
       this._apiService.login(this.loginModel).subscribe(
         data => {
+          this.googleAnalyticsEventsService.eventEmitter("technexPage", "googleLogin", "technex", 1);
           this.login_user();
         },
         error => {
@@ -211,6 +214,7 @@ export class LandingComponent implements OnInit {
   }
 
   password_login() {
+    this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordLogin", "technex", 1);
     firebase.auth().signInWithEmailAndPassword(
       this.login_email, this.login_password).catch((error) => {});
     const user = firebase.auth().currentUser;
@@ -225,8 +229,10 @@ export class LandingComponent implements OnInit {
 
   register() {
     if (this.register_using_google === true) {
+      this.googleAnalyticsEventsService.eventEmitter("technexPage", "googleRegister", "technex", 1);
       this.register_google();
     } else {
+      this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordRegister", "technex", 1);
       this.register_password();
     }
   }
