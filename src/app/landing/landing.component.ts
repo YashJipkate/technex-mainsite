@@ -223,8 +223,8 @@ export class LandingComponent implements OnInit {
       id_token = user.toJSON();
       id_token = id_token.stsTokenManager.accessToken;
       this.loginModel.id_token = id_token;
+      this.login_user();
     }
-    this.login_user();
   }
 
   register() {
