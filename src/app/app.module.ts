@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CookieService } from 'ngx-cookie-service';
-import {GoogleAnalyticsEventsService} from "./services/google-analytics-events.service";
+import { GoogleAnalyticsEventsService } from "./services/google-analytics-events.service";
 
 @NgModule({
   declarations: [
