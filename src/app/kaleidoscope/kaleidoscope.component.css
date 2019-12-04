@@ -16,11 +16,10 @@
   text-align: center;
 }
 
-
 #set {
-  width:auto;
+  width:470px;
   height: auto;;
-  max-width: 470px;
+  max-width: 100%;
   min-height: 500px;
 }
 

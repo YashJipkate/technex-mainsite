@@ -7,6 +7,20 @@
     color:white;
     display: inline;
 }
+
+#btn{
+  text-align: center;
+  color:black;
+}
+
+#he{
+  color:rgb(203, 229, 255);
+
+  font-size: 20px;
+  text-align: center;
+  font-weight: 1000;
+}
+
 @-webkit-keyframes flipInX {
     from {
       -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
