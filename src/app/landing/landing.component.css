@@ -81,3 +81,12 @@
     animation-iteration-count: infinite;
   }
   
+@media (max-width: 800px) {
+    div {
+        background-image: url(/assets/wp-content/uploads/2016/10/banner-1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+}
+  
