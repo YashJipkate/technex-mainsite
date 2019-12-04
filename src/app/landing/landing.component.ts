@@ -148,28 +148,63 @@ export class LandingComponent implements OnInit {
     var api_error = null;
     this.isMessageRegister = false;
     this.msg_register = '';
-    firebase.auth().createUserWithEmailAndPassword(this.register_email, this.register_password1)
-    .catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(this.register_email, this.register_password1).catch(function(error) {
+      this.isMessageRegister = true;
+      this.msg_register = 'You are already registered';
+    }.bind(this));
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        var id_token = null;
+        id_token = user.toJSON();  
+        id_token = id_token.stsTokenManager.accessToken;
+        this.loginModel.id_token = id_token;
+        const registerModel = new Register(
+          this.loginModel.id_token,
+          this.register_firstname,
+          this.register_lastname,
+          Number(this.register_gender),
+          Number(this.register_year),
+          this.register_phone,
+          this.register_college,
+          this.register_city);
+        this._apiService.register(registerModel).subscribe(
+          data => {
+            user.sendEmailVerification().then(function() {}).catch(function(error){console.log(error);});
+            this.isMessageRegister = true;
+            this.msg_register = 'Successfully registered! Please verify your email by clicking on the link sent to your email address.';
+            this.register_email = '';
+            this.register_firstname = '';
+            this.register_lastname = '';
+            this.register_password1 = '';
+            this.register_password2 = '';
+            this.register_college = '';
+            this.register_city = '';
+            this.register_phone = '';
+            this.register_gender = 0;
+            this.register_year = 1;
+          },
+          error => {
+            console.log(error);
+            api_error = error;
+            try {
+              if (api_error.error[0] == "User already exists") {
+                this.isMessageRegister = true;
+                this.msg_register = 'You are already registered';
+              }
+            } catch(err) {
+              this.isMessageRegister = true;
+              this.msg_register = 'Please fill all the fields correctly';
+            }
+          }
+        )
+      }
+    }.bind(this)
+    );
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
       console.log(error);
     });
-    var user = firebase.auth().currentUser;
-    if(user != null){
-      var id_token = null;
-      id_token = user.toJSON();
-      id_token = id_token.stsTokenManager.accessToken;
-      this.loginModel.id_token = id_token;
-      var email_id = user.email;
-      var emailVerified = user.emailVerified;
-      if (!emailVerified) {
-        var self = this;
-        user.sendEmailVerification().then(function() {
-          self.isMessageRegister = true;
-          self.msg_register = 'Successfully registered! Please verify your email by clicking on the link sent to your email address.';
-        }).catch(function(error) {
-          console.log(error);
-        });
-      }
-    }
+    
   }
 
   register_google() {
@@ -206,31 +241,6 @@ export class LandingComponent implements OnInit {
   register_password() {
     var api_error = null;
     this.firebase_password_register();
-    const registerModel = new Register(
-      this.loginModel.id_token,
-      this.register_firstname,
-      this.register_lastname,
-      Number(this.register_gender),
-      Number(this.register_year),
-      this.register_phone,
-      this.register_college,
-      this.register_city);
-    this._apiService.register(registerModel).subscribe(
-      data => {},
-      error => {
-        console.log(error);
-        api_error = error;
-        try {
-          if (api_error.error.non_field_errors[0] == "User already exists") {
-            this.isMessageRegister = true;
-            this.msg_register = 'User already exists';
-          }
-        } catch(err) {
-          this.isMessageRegister = true;
-          this.msg_register = 'Please fill all the fields correctly';
-        }
-      }
-    )
   }
 
   password_login() {
@@ -291,19 +301,21 @@ export class LandingComponent implements OnInit {
       this.msg_register = 'Please enter a valid email address';
       return false;
     }
-    if (this.register_password1.length < 6) {
-      this.isMessageRegister = true;
-      this.msg_register = 'Password should be atleast 6 characters long';
-      this.register_password1 = '';
-      this.register_password2 = '';
-      return false;
-    }
-    if (this.register_password1 !== this.register_password2) {
-      this.isMessageRegister = true;
-      this.msg_register = 'Passwords do not match!';
-      this.register_password1 = '';
-      this.register_password2 = '';
-      return false;
+    if (this.register_using_google == false) {
+      if (this.register_password1.length < 6) {
+        this.isMessageRegister = true;
+        this.msg_register = 'Password should be atleast 6 characters long';
+        this.register_password1 = '';
+        this.register_password2 = '';
+        return false;
+      }
+      if (this.register_password1 !== this.register_password2) {
+        this.isMessageRegister = true;
+        this.msg_register = 'Passwords do not match!';
+        this.register_password1 = '';
+        this.register_password2 = '';
+        return false;
+      }
     }
     if (this.register_firstname == '') {
       this.isMessageRegister = true;
