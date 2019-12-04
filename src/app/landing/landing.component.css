@@ -7,6 +7,20 @@
     color:white;
     display: inline;
 }
+
+#btn{
+  text-align: center;
+  color:black;
+}
+
+#he{
+  color:rgb(203, 229, 255);
+
+  font-size: 20px;
+  text-align: center;
+  font-weight: 1000;
+}
+
 @-webkit-keyframes flipInX {
     from {
       -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -80,4 +94,13 @@
     animation-name: flipInX;
     animation-iteration-count: infinite;
   }
+  
+@media (max-width: 800px) {
+    div {
+        background-image: url(/assets/wp-content/uploads/2016/10/banner-1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+}
   
