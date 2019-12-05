@@ -5,9 +5,9 @@
             <div class="vc_column-inner ">
                 <div class="wpb_wrapper">
                     <div class="banner-wrap ">
-                        <img src="assets/wp-content/uploads/2016/10/banner-1.gif" alt="" class="s-img-switch">
+                        <img src="assets/wp-content/uploads/2016/10/banner-2.gif" style="height:auto;width:100%;">
                         <div class="content">
-                            <h1 class="title flipInX">TECHNEX <b style="color:red">2020</b></h1>
+                            <h1 class="title ">TECHNEX <b class="animated flipInX" style="color:red">2020</b></h1>
                             <div >
                                 <b style="color: white">The Annual Techno-Management Fest
                                     <br>IIT (BHU) Varanasi
@@ -47,14 +47,13 @@
                         </div>
                         <div class="register-popup custom-popup">
                                 <div class="popup-close"><i class="fa-right"></i>X</div>
-                            <p id="btn">Email</p>
                            
                             <div role="form" class="wpcf7" id="wpcf7-f142-o1" lang="en-US" dir="ltr">
                                 <div class="screen-reader-response"></div>
                                 <div class="wpcf7-form">
                                     <div class="c-form-group" *ngIf="register_using_google == false">
                                         <div class="c-form-label">
-                                           
+                                            <p id="btn">Email</p>
                                         </div>
                                         <p><span class="wpcf7-form-control-wrap your-name"><input type="text"
                                                     name="your-name" value="" size="40"
@@ -63,13 +62,14 @@
                                     </div>
                                     <div class="c-form-group" *ngIf="register_using_google == false">
                                         <div class="c-form-label">
-                                            <p id="btn">PASSWORD</p>
+                                            <p id="btn">Password</p>
                                         </div>
                                         <p><span class="wpcf7-form-control-wrap phone"><input type="password" name="phone"
                                                     value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="login_password" /></span></p>
                                     </div>
+                                    <p [hidden]="!isMessageLogin" *ngIf="register_using_google == false">{{ msg_login }}</p>
 
                                     <div class="submit-wrapper" *ngIf="register_using_google == false">
                                         <div class="submit-wrap"> <input type="submit" (click)="password_login()" value="LOGIN"
@@ -87,25 +87,25 @@
                                     </div>
 
 
-                                    <div class="c-form-group date-wrap">
+                                    <div class="c-form-group amount-wrap">
                                         <div id="btn" class="c-form-label">First Name</div>
-                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="text" name="phone"
                                                     value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="register_firstname" /></span></p>
                                     </div>
                                     <div class="c-form-group amount-wrap">
                                         <div id="btn" class="c-form-label">Last Name</div>
-                                        <p><span class="wpcf7-form-control-wrap phone"><input type="tel" name="phone"
+                                        <p><span class="wpcf7-form-control-wrap phone"><input type="text" name="phone"
                                                     value="" size="40"
                                                     class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="register_lastname" /></span></p>
                                     </div>
-                                    <div class="c-form-group date-wrap" *ngIf="register_using_google == false">
+                                    <div class="c-form-group amount-wrap" *ngIf="register_using_google == false">
                                         <div id="btn" class="c-form-label">Email</div>
                                         <p><span class="wpcf7-form-control-wrap phone"><input type="text" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" [(ngModel)]="register_email" /></span></p>
                                     </div>
-                                    <div class="c-form-group date-wrap" *ngIf="register_using_google == true">
+                                    <div class="c-form-group amount-wrap" *ngIf="register_using_google == true">
                                         <div id="btn"  class="c-form-label">Email</div>
                                         <p><span class="wpcf7-form-control-wrap phone"><input type="text" disabled name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone" aria-required="true" aria-invalid="false" [(ngModel)]="register_email" /></span></p>
                                     </div>
@@ -116,7 +116,7 @@
                                                     class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="register_password1" /></span></p>
                                     </div>
-                                    <div class="c-form-group date-wrap" *ngIf="register_using_google == false">
+                                    <div class="c-form-group amount-wrap" *ngIf="register_using_google == false">
                                         <div id="btn" class="c-form-label">Password Again</div>
                                         <p><span class="wpcf7-form-control-wrap phone"><input type="password" name="phone"
                                                     value="" size="40"
@@ -130,7 +130,7 @@
                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="register_college" /></span></p>
                                     </div>
-                                    <div class="c-form-group date-wrap">
+                                    <div class="c-form-group amount-wrap">
                                         <div id="btn" class="c-form-label">City</div>
                                         <p><span class="wpcf7-form-control-wrap your-email"><input type="text"
                                                     name="your-email" value="" size="40"
@@ -144,9 +144,9 @@
                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="register_phone" /></span></p>
                                     </div>
-                                    <div class="c-form-group date-wrap">
+                                    <div class="c-form-group amount-wrap">
                                         <div id="btn" class="c-form-label">Gender</div>
-                                        <p><span id="he1" class="wpcf7-form-control-wrap date"><select type="number" name="date"
+                                        <p><span id="he1" class="wpcf7-form-control-wrap date"><select  style="color:black;" type="number" name="date"
                                                     value=""  class="wpcf7-form-control wpcf7-text"
                                                     aria-invalid="false" [(ngModel)]="register_gender" >
                                                     <option value = 0 style="color:black;"> Male </option>
@@ -157,7 +157,7 @@
                                     <div class="c-form-group amount-wrap">
                                         <div id="btn" class="c-form-label">Year</div>
                                              
-                                                <p><span id="he1" class="wpcf7-form-control-wrap amount"><select type="number"
+                                                <p><span id="he1" class="wpcf7-form-control-wrap amount"><select  style="color:black;" type="number"
                                                     name="amount" value=""
                                                     class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number amount"
                                                    [(ngModel)]="register_year" aria-invalid="false" >
@@ -171,7 +171,7 @@
                                                 <option value = 6 style="color:black;"> Passout (Only for Startup Fair) </option>
                                                 </select></span></p>
                                     </div>
-
+                                    <p [hidden]="!isMessageRegister">{{ msg_register }}</p>
                                     <div class="submit-wrapper">
                                         <div class="submit-wrap"> <input type="submit" (click)="register()" value="REGISTER"
                                                 class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />
