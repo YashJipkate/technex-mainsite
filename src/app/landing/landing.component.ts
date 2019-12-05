@@ -48,6 +48,11 @@ export class LandingComponent implements OnInit {
   isLoggedIn: string;
   isLoggedInBool: boolean;
 
+  isMessageLogin = false;
+  msg_login = '';
+  isMessageRegister = false;
+  msg_register = '';
+
   constructor(
     private _apiService: ApiService, private _toastService: ToastService,
     private cookieService: CookieService,
@@ -76,11 +81,31 @@ export class LandingComponent implements OnInit {
   }
 
   login_user() {
+    var api_error = null;
     this._apiService.login(this.loginModel).subscribe(
       data => {
         this.cookieService.set('login_token', data.message, 200, undefined, '.technex.in');
         this.cookieService.set('logged', 'true', 200, undefined, '.technex.in');
+        this.isMessageLogin = true;
+        this.msg_login = 'Login Successful. You will be redirected to your dashboard'; 
         window.location.href = 'https://dashboard.technex.in/';
+      },
+      error => {
+        console.log(error);
+        api_error = error;
+        try {
+          if (api_error.error.non_field_errors[0] == "No such account exists") {
+            this.isMessageLogin = true;
+            this.msg_login = 'No such account exists. Please register!'; 
+          }
+          else if (api_error.error.non_field_errors[0] == "Email is not verified") {
+            this.isMessageLogin = true;
+            this.msg_login = 'Email is not verified!'; 
+          }
+        } catch(err) {
+          this.isMessageLogin = true;
+          this.msg_login = 'Please fill all the fields correctly';
+        }
       }
     );
   }
@@ -121,25 +146,69 @@ export class LandingComponent implements OnInit {
 
   firebase_password_register() {
     var api_error = null;
+    this.isMessageRegister = false;
+    this.msg_register = '';
     firebase.auth().createUserWithEmailAndPassword(this.register_email, this.register_password1).catch(function(error) {
-    });
-    var user = firebase.auth().currentUser;
-    if(user != null){
-      var id_token = null;
-      id_token = user.toJSON();
-      id_token = id_token.stsTokenManager.accessToken;
-      this.loginModel.id_token = id_token;
-      var email_id = user.email;
-      var emailVerified = user.emailVerified;
-      if (emailVerified == false) {
-        user.sendEmailVerification().then(function() {
-          console.log("Email sent");
-        }).catch(function(error) {});
+      this.isMessageRegister = true;
+      this.msg_register = 'You are already registered';
+    }.bind(this));
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        var id_token = null;
+        id_token = user.toJSON();  
+        id_token = id_token.stsTokenManager.accessToken;
+        this.loginModel.id_token = id_token;
+        const registerModel = new Register(
+          this.loginModel.id_token,
+          this.register_firstname,
+          this.register_lastname,
+          Number(this.register_gender),
+          Number(this.register_year),
+          this.register_phone,
+          this.register_college,
+          this.register_city);
+        this._apiService.register(registerModel).subscribe(
+          data => {
+            user.sendEmailVerification().then(function() {}).catch(function(error){console.log(error);});
+            this.isMessageRegister = true;
+            this.msg_register = 'Successfully registered! Please verify your email by clicking on the link sent to your email address.';
+            this.register_email = '';
+            this.register_firstname = '';
+            this.register_lastname = '';
+            this.register_password1 = '';
+            this.register_password2 = '';
+            this.register_college = '';
+            this.register_city = '';
+            this.register_phone = '';
+            this.register_gender = 0;
+            this.register_year = 1;
+          },
+          error => {
+            console.log(error);
+            api_error = error;
+            try {
+              if (api_error.error[0] == "User already exists") {
+                this.isMessageRegister = true;
+                this.msg_register = 'You are already registered';
+              }
+            } catch(err) {
+              this.isMessageRegister = true;
+              this.msg_register = 'Please fill all the fields correctly';
+            }
+          }
+        )
       }
-    }
+    }.bind(this)
+    );
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
+      console.log(error);
+    });
+    
   }
 
   register_google() {
+    var api_error = null;
     const registerModel = new Register(
       this.loginModel.id_token,
       this.register_firstname,
@@ -149,91 +218,146 @@ export class LandingComponent implements OnInit {
       this.register_phone,
       this.register_college,
       this.register_city);
-    // if (registerModel.password !== this.confirmPassword) {
-    //   this._toastService.error_toast('Error', 'Passwords do not match!');
-    //   this.confirmPassword = '';
-    //   this.registerModel.password = '';
-    //   return false;
-    // }
-
-    // if (this.registerModel.password.length < 6) {
-    //   this._toastService.error_toast('Error', 'Password should be atleast 6 characters long');
-    //   this.confirmPassword = '';
-    //   this.registerModel.password = '';
-    //   return false;
-    // }
-
-    // const is_num_pin_code = /^\d+$/.test(this.pinCode_string);
-
-    // if (!is_num_pin_code) {
-    //   this._toastService.error_toast('Error', 'Pincode should be a number');
-    //   return false;
-    // } else {
-    //   this.registerModel.pinCode = Number(this.pinCode_string);
-    // }
-
-    // const isnum_mobile_number = /^\d+$/.test(this.registerModel.mobile_number);
-    // const isnum_whatsapp_number = /^\d+$/.test(this.registerModel.whatsapp_number);
-
-    // if (!isnum_mobile_number || !isnum_whatsapp_number) {
-    //   this._toastService.error_toast('Error', 'Enter a valid contact no.');
-    //   return false;
-    // }
-
-    // if (this.registerModel.mobile_number.length !== 10 ||
-    //   this.registerModel.whatsapp_number.length !== 10) {
-    //   this._toastService.error_toast('Error', 'Mobile no. should have 10 digits');
-    //   return false;
-    // }
-
-    // return true;
     this._apiService.register(registerModel).subscribe(
       data => {
         this.login_user();
+      },
+      error => {
+        api_error = error;
+        console.log(error);
+        try {
+          if (api_error.error.non_field_errors[0] == "User already exists") {
+            this.isMessageRegister = true;
+            this.msg_register = 'User already exists';
+          }
+        } catch(err) {
+          this.isMessageRegister = true;
+          this.msg_register = 'Please fill all the fields correctly';
+        }
       }
     )
   }
 
   register_password() {
-    // TODO: Add validation here
+    var api_error = null;
     this.firebase_password_register();
-    const registerModel = new Register(
-      this.loginModel.id_token,
-      this.register_firstname,
-      this.register_lastname,
-      Number(this.register_gender),
-      Number(this.register_year),
-      this.register_phone,
-      this.register_college,
-      this.register_city);
-    this._apiService.register(registerModel).subscribe(
-      data => {},
-      error => {
-      }
-    )
   }
 
   password_login() {
-    this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordLogin", "technex", 1);
-    firebase.auth().signInWithEmailAndPassword(
-      this.login_email, this.login_password).catch((error) => {});
-    const user = firebase.auth().currentUser;
-    if(user != null){
-      let id_token = null;
-      id_token = user.toJSON();
-      id_token = id_token.stsTokenManager.accessToken;
-      this.loginModel.id_token = id_token;
+    if (this.loginValidate()) {
+      this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordLogin", "technex", 1);
+      var self = this;
+      firebase.auth().signInWithEmailAndPassword(
+        this.login_email, this.login_password).catch(
+          (error) => {
+            console.log(error);
+            self.isMessageLogin = true;
+            self.msg_login = 'Invalid Credentials!!';
+        });
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var user = firebase.auth().currentUser;
+          console.log(user);
+          if(user != null){
+            let id_token = null;
+            id_token = user.toJSON();
+            id_token = id_token.stsTokenManager.accessToken;
+            self.loginModel.id_token = id_token;
+            self.login_user();
+          }
+          else {
+            self.isMessageLogin = true;
+            self.msg_login = 'Invalid credentials!';
+          }
+        }
+      })
     }
-    this.login_user();
+  }
+
+  emailValidate(email) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      return true;
+    }
+    return false;
+  }
+
+  loginValidate() {
+    if (this.login_email === '' || this.login_password === '') {
+      this.isMessageLogin = true;
+      this.msg_login = 'Please fill all the fields';
+      return false;
+    }
+    if (!this.emailValidate(this.login_email)) {
+      this.isMessageLogin = true;
+      this.msg_login = 'Please enter a valid email address';
+      return false;
+    }
+    return true;
+  }
+
+  registerValidate() {
+    if (!this.emailValidate(this.register_email)) {
+      this.isMessageRegister = true;
+      this.msg_register = 'Please enter a valid email address';
+      return false;
+    }
+    if (this.register_using_google == false) {
+      if (this.register_password1.length < 6) {
+        this.isMessageRegister = true;
+        this.msg_register = 'Password should be atleast 6 characters long';
+        this.register_password1 = '';
+        this.register_password2 = '';
+        return false;
+      }
+      if (this.register_password1 !== this.register_password2) {
+        this.isMessageRegister = true;
+        this.msg_register = 'Passwords do not match!';
+        this.register_password1 = '';
+        this.register_password2 = '';
+        return false;
+      }
+    }
+    if (this.register_firstname == '') {
+      this.isMessageRegister = true;
+      this.msg_register = 'First Name is mandatory';
+      return false;
+    }
+    if (this.register_phone.length !== 10) {
+      this.isMessageRegister = true;
+      this.msg_register = 'Phone number should have 10 digits';
+      return false;
+    }
+    const isnum_phone = /^\d+$/.test(this.register_phone);
+    if (!isnum_phone) {
+      this.isMessageRegister = true;
+      this.msg_register = 'Enter a valid phone number';
+      return false;
+    }
+    if (this.register_college == '') {
+      this.isMessageRegister = true;
+      this.msg_register = 'Please enter your college name';
+      return false;
+    }
+    if (this.register_city == '') {
+      this.isMessageRegister = true;
+      this.msg_register = 'Please enter your city name';
+      return false;
+    }
+    this.isMessageRegister = false;
+    this.msg_register = '';
+
+    return true;
   }
 
   register() {
-    if (this.register_using_google === true) {
-      this.googleAnalyticsEventsService.eventEmitter("technexPage", "googleRegister", "technex", 1);
-      this.register_google();
-    } else {
-      this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordRegister", "technex", 1);
-      this.register_password();
+    if (this.registerValidate()) {
+      if (this.register_using_google === true) {
+        this.googleAnalyticsEventsService.eventEmitter("technexPage", "googleRegister", "technex", 1);
+        this.register_google();
+      } else {
+        this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordRegister", "technex", 1);
+        this.register_password();
+      }
     }
   }
 }

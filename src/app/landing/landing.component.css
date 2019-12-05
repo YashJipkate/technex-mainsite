@@ -10,15 +10,16 @@
 
 #btn{
   text-align: center;
-  color:black;
+  color:rgb(255, 255, 255);
+  font-weight: 800;
 }
 
 #he{
-  color:rgb(203, 229, 255);
+  color: red;
 
   font-size: 20px;
   text-align: center;
-  font-weight: 1000;
+  font-weight: 600;
 }
 
 @-webkit-keyframes flipInX {

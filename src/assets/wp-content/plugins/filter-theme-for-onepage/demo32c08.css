@@ -35,7 +35,7 @@ input[type="submit"][disabled]:focus,
 .team-social a:hover,
 .banner-slider-wrap .right-block .event_btn:before,
 .service-block:hover {
-    background: #e00231;
+    background:#1a4752;
 }
 
 @media screen and (max-width: 600px){

@@ -47,14 +47,13 @@
                         </div>
                         <div class="register-popup custom-popup">
                                 <div class="popup-close"><i class="fa-right"></i>X</div>
-                            <p id="btn">Email</p>
                            
                             <div role="form" class="wpcf7" id="wpcf7-f142-o1" lang="en-US" dir="ltr">
                                 <div class="screen-reader-response"></div>
                                 <div class="wpcf7-form">
                                     <div class="c-form-group" *ngIf="register_using_google == false">
                                         <div class="c-form-label">
-                                           
+                                            <p id="btn">Email</p>
                                         </div>
                                         <p><span class="wpcf7-form-control-wrap your-name"><input type="text"
                                                     name="your-name" value="" size="40"
@@ -70,6 +69,7 @@
                                                     class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel phone"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="login_password" /></span></p>
                                     </div>
+                                    <p [hidden]="!isMessageLogin" *ngIf="register_using_google == false">{{ msg_login }}</p>
 
                                     <div class="submit-wrapper" *ngIf="register_using_google == false">
                                         <div class="submit-wrap"> <input type="submit" (click)="password_login()" value="LOGIN"
@@ -171,7 +171,7 @@
                                                 <option value = 6 style="color:black;"> Passout (Only for Startup Fair) </option>
                                                 </select></span></p>
                                     </div>
-
+                                    <p [hidden]="!isMessageRegister">{{ msg_register }}</p>
                                     <div class="submit-wrapper">
                                         <div class="submit-wrap"> <input type="submit" (click)="register()" value="REGISTER"
                                                 class="wpcf7-form-control wpcf7-submit c-btn b-50 black hv-yellow-o" />
