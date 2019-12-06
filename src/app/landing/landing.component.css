@@ -96,15 +96,7 @@
     animation-iteration-count: infinite;
   }
   
-/* @media (max-width: 800px) {
-    div {
-        background-image: url(/assets/wp-content/uploads/2016/10/imageedit_5_3326769233.gif);
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
-} */
-/* @media (min-width: 800px){ */
+
 #home-3{
   background-image: url("/assets/wp-content/uploads/2016/10/imageedit_5_3326769233.gif");
   background-size: cover;
@@ -112,86 +104,86 @@
   padding:0;
   margin:0;
 }
-/* } */
+
 
 #b1{
-  -webkit-animation: 1s ease 0s normal forwards 1 fadein;
-  animation: 1s ease 0s normal forwards 1 fadein;
+  -webkit-animation: 0.3s ease 0s normal forwards 1 fadein;
+  animation: 0.3s ease 0s normal forwards 1 fadein;
 }
 
 #b2{
+  -webkit-animation: 0.6s ease 0s normal forwards 1 fadein;
+  animation: 0.6s ease 0s normal forwards 1 fadein;
+}
+
+#b3{
+  -webkit-animation: 0.9s ease 0s normal forwards 1 fadein;
+  animation: 0.9s ease 0s normal forwards 1 fadein;
+}
+
+#b4{
+  -webkit-animation: 1.2s ease 0s normal forwards 1 fadein;
+  animation: 1.2s ease 0s normal forwards 1 fadein;
+}
+
+#b5{
   -webkit-animation: 1.5s ease 0s normal forwards 1 fadein;
   animation: 1.5s ease 0s normal forwards 1 fadein;
 }
 
-#b3{
-  -webkit-animation: 2s ease 0s normal forwards 1 fadein;
-  animation: 2s ease 0s normal forwards 1 fadein;
+#b6{
+  -webkit-animation: 1.8s ease 0s normal forwards 1 fadein;
+  animation: 1.8s ease 0s normal forwards 1 fadein;
 }
 
-#b4{
-  -webkit-animation: 2.5s ease 0s normal forwards 1 fadein;
-  animation: 2.5s ease 0s normal forwards 1 fadein;
+#b7{
+  -webkit-animation: 2.1s ease 0s normal forwards 1 fadein;
+  animation: 2.1s ease 0s normal forwards 1 fadein;
 }
 
-#b5{
+#b8{
+  -webkit-animation: 2.4s ease 0s normal forwards 1 fadein;
+  animation: 2.4s ease 0s normal forwards 1 fadein;
+}
+
+#b9{
+  -webkit-animation: 2.7s ease 0s normal forwards 1 fadein;
+  animation: 2.7s ease 0s normal forwards 1 fadein;
+}
+
+#b10{
   -webkit-animation: 3s ease 0s normal forwards 1 fadein;
   animation: 3s ease 0s normal forwards 1 fadein;
 }
 
-#b6{
-  -webkit-animation: 3.5s ease 0s normal forwards 1 fadein;
-  animation: 3.5s ease 0s normal forwards 1 fadein;
+#b11{
+  -webkit-animation: 3.3s ease 0s normal forwards 1 fadein;
+  animation: 3.3s ease 0s normal forwards 1 fadein;
 }
 
-#b7{
-  -webkit-animation: 4s ease 0s normal forwards 1 fadein;
-  animation: 4s ease 0s normal forwards 1 fadein;
+#b12{
+  -webkit-animation: 3.6s ease 0s normal forwards 1 fadein;
+  animation: 3.6s ease 0s normal forwards 1 fadein;
 }
 
-#b8{
+#b13{
+  -webkit-animation: 3.9s ease 0s normal forwards 1 fadein;
+  animation: 3.9s ease 0s normal forwards 1 fadein;
+}
+
+#b14{
+  -webkit-animation: 4.2s ease 0s normal forwards 1 fadein;
+  animation: 4.2s ease 0s normal forwards 1 fadein;
+}
+
+#b15{
   -webkit-animation: 4.5s ease 0s normal forwards 1 fadein;
   animation: 4.5s ease 0s normal forwards 1 fadein;
 }
 
-#b9{
-  -webkit-animation: 5s ease 0s normal forwards 1 fadein;
-  animation: 5s ease 0s normal forwards 1 fadein;
-}
-
-#b10{
-  -webkit-animation: 5.5s ease 0s normal forwards 1 fadein;
-  animation: 5.5s ease 0s normal forwards 1 fadein;
-}
-
-#b11{
-  -webkit-animation: 6s ease 0s normal forwards 1 fadein;
-  animation: 6s ease 0s normal forwards 1 fadein;
-}
-
-#b12{
-  -webkit-animation: 6.5s ease 0s normal forwards 1 fadein;
-  animation: 6.5s ease 0s normal forwards 1 fadein;
-}
-
-#b13{
-  -webkit-animation: 7s ease 0s normal forwards 1 fadein;
-  animation: 7s ease 0s normal forwards 1 fadein;
-}
-
-#b14{
-  -webkit-animation: 7.5s ease 0s normal forwards 1 fadein;
-  animation: 7.5s ease 0s normal forwards 1 fadein;
-}
-
-#b15{
-  -webkit-animation: 8s ease 0s normal forwards 1 fadein;
-  animation: 8s ease 0s normal forwards 1 fadein;
-}
-
 #b16{
-  -webkit-animation: 8.5s ease 0s normal forwards 1 fadein;
-  animation: 8.5s ease 0s normal forwards 1 fadein;
+  -webkit-animation: 4.8s ease 0s normal forwards 1 fadein;
+  animation: 4.8s ease 0s normal forwards 1 fadein;
 }
 
 @keyframes fadein{
