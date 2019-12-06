@@ -12,6 +12,15 @@
   text-align: center;
 }
 
+#set {
+  width:auto;
+  height: auto;
+  max-width: 220px;
+  min-height: 280px;
+  padding: 7px;
+}
+
+
 #test1{
   font-size: 20px;
   text-align: center;
