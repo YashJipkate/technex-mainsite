@@ -96,12 +96,7 @@
     animation-iteration-count: infinite;
   }
   
- @media (max-width: 800px) {
-    #hideit {
-        display:none;
-    }
-} 
-/* @media (min-width: 800px){ */
+
 #home-3{
   background-image: url("/assets/wp-content/uploads/2016/10/imageedit_5_3326769233.gif");
   background-size: cover;
@@ -109,7 +104,7 @@
   padding:0;
   margin:0;
 }
-/* } */
+
 
 #b1{
   -webkit-animation: 0.3s ease 0s normal forwards 1 fadein;
