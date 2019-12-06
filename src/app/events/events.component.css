@@ -3,6 +3,12 @@
   position: sticky;
   top: 0;
 }
+
+#test1{
+  font-size: 20px;
+  text-align: center;
+}
+
   
 .fade-in{
   animation: animationFrames ease 1s;
