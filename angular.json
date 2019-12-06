@@ -20,7 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
+              "src/assests/image/logo-s2-white.png",
               "src/assets"
             ],
             "styles": [
