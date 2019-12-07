@@ -8,6 +8,7 @@ import { Login } from "../utilities/login";
 import { Register } from "../utilities/register";
 import { CookieService } from 'ngx-cookie-service';
 import {GoogleAnalyticsEventsService} from "../services/google-analytics-events.service";
+import * as collegeList from '../../assets/college_list.json';
 
 declare interface RouteInfo {
   path: string;
@@ -30,6 +31,7 @@ export const ROUTES: RouteInfo[] = [
 
 export class LandingComponent implements OnInit {
   menuItems: any[];
+  is_login = true;
   register_using_google = false;
   loginModel = new Login('');
   register_email = '';
@@ -52,6 +54,8 @@ export class LandingComponent implements OnInit {
   msg_login = '';
   isMessageRegister = false;
   msg_register = '';
+
+  college_list: any = (collegeList as any).default;
 
   constructor(
     private _apiService: ApiService, private _toastService: ToastService,
@@ -78,6 +82,10 @@ export class LandingComponent implements OnInit {
       measurementId: "G-BPPJCTCVT6"
     };
     firebase.initializeApp(firebaseConfig);
+  }
+
+  toggle_is_login() {
+    this.is_login = !this.is_login;
   }
 
   login_user() {
@@ -130,6 +138,7 @@ export class LandingComponent implements OnInit {
           try {
             if (api_error.error.non_field_errors[0] == "No such account exists") {
               this.register_using_google = true;
+              this.is_login = false;
               this.register_email = user.email;
             }
           } catch (err) {}
