@@ -20,8 +20,18 @@
   width:auto;
   height: 83%;;
   max-width: 365px;
-  max-height: 380px;
+  max-height: 340px;
+  padding: 5px;
 }
+
+#set1{
+  width:auto;
+  height: 63%;;
+  max-width: 260px;
+  max-height: 320px;
+  padding: 10px;
+}
+
 
 .fade-in{
   animation: animationFrames ease 1s;
