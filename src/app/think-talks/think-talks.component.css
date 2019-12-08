@@ -17,17 +17,24 @@
 }
 
 #set {
+  width:  auto;
+  height: auto;
+  max-width: 100%;
+  min-height: 450px;
+}
+
+#set2{
   width:490px;
   height: auto;
   max-width: 100%;
-  min-height: 400px;
+  max-height: 368px;
 }
 
 #set1 {
   width:370px;
   height: auto;
   max-width: 100%;
-  min-height: 400px;
+  min-height: 530px;
 }
 
 .fade-in{
