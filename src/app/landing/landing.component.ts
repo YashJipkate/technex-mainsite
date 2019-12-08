@@ -119,6 +119,10 @@ export class LandingComponent implements OnInit {
   }
 
   firebase_google_login() {
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
+      console.log(error);
+    });
     var provider = new firebase.auth.GoogleAuthProvider();
     var api_error = null;
 
@@ -253,6 +257,10 @@ export class LandingComponent implements OnInit {
   }
 
   password_login() {
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
+      console.log(error);
+    });
     if (this.loginValidate()) {
       this.googleAnalyticsEventsService.eventEmitter("technexPage", "passwordLogin", "technex", 1);
       var self = this;
@@ -359,6 +367,10 @@ export class LandingComponent implements OnInit {
   }
 
   register() {
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
+      console.log(error);
+    });
     if (this.registerValidate()) {
       if (this.register_using_google === true) {
         this.googleAnalyticsEventsService.eventEmitter("technexPage", "googleRegister", "technex", 1);
