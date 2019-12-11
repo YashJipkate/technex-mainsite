@@ -4,15 +4,15 @@
         <div class="wpb_column vc_column_container vc_col-sm-12 ">
             <div class="vc_column-inner ">
                 <div class="wpb_wrapper">
-                    <div class="banner-wrap ">
-                        <!-- <img src="assets/wp-content/uploads/2016/10/banner-2.gif" style="height:auto;width:100%;"> -->
+                    <div align="center">
+                        <br><br><br><br><br><br>
                         <div class="content">
-                            <h1 class="title " style="font-family: Code;"><b>TECHNEX'20</b></h1>
-                            <h2 style="font-size: 35px;">
-                                <b id="b1">B</b><b id="b2">A</b><b id="b3">C</b><b id="b4">K</b><b>&nbsp;</b>
-                                <b id="b5">T</b><b id="b6">O</b><b>&nbsp;</b>
-                                <b id="b7">T</b><b id="b8">H</b><b id="b9">E</b><b>&nbsp;</b>
-                                <b id="b10">F</b><b id="b11">U</b><b id="b12">T</b><b id="b13">U</b><b id="b14">R</b><b id="b15">E</b>
+                            <h1 class="neon " style="font-family: Code;" id="tx20">TECHNEX'20</h1>
+                            <h2 style="font-size: 35px;" class="flux" id="btf">
+                                <i id="b1">B</i><i id="b2">A</i><i id="b3">C</i><i id="b4">K</i><i>&nbsp;</i>
+                                <i id="b5">T</i><i id="b6">O</i><i>&nbsp;</i>
+                                <i id="b7">T</i><i id="b8">H</i><i id="b9">E</i><i>&nbsp;</i>
+                                <i id="b10">F</i><i id="b11">U</i><i id="b12">T</i><i id="b13">U</i><i id="b14">R</i><i id="b15">E</i>
 
                             </h2>
                             <div style="font-size: 18px;" id="b16">
@@ -20,7 +20,6 @@
                                     <br>IIT (BHU) Varanasi
                                     <br>14th to 16th Feburary</b>
                             </div>
-                            <br><br>
                             <br><br>
 
                             <a *ngIf="!isLoggedInBool" href="" class="gradient-btn register-link">
@@ -39,10 +38,8 @@
 
                             </a>
 
-                            <br>
-
-                            <br>
-                            <br>
+                            
+                            <br><br>
                             <a id="same" href="https://ca.technex.in" class="all_events">
                                 <p id="same"> CA Portal | </p>
                             </a>
@@ -51,15 +48,35 @@
                                     <p id="same">{{ menuItem.title }} | </p>
                                 </a>
                             </a>
-                            <a *ngFor="let teammenuItem of teammenuItems">
-                                <a [routerLink]="[teammenuItem.path]">
-                                    <p id="same">{{ teammenuItem.title }}</p>
-                                </a>
-                            </a>
+                            <div><br>
+                                    <a href="https://www.facebook.com/technexiitbhu/"><i class="fa fa-facebook neon4" style="font-size:24px;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/technexiitbhu/?hl=en"><i class="fa fa-instagram neon4" style="font-size:24px;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/channel/UC3kSW8QtuvCYzKy4oP82r8w"><i class="fa fa-youtube neon4" style="font-size:24px;"></i></a>
+                            </div>
+                            <div id="news-red" class="container add_animation">
+					<div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1480431155098 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12 "><div class="vc_column-inner "><div class="wpb_wrapper">		<div>
+			<div class="row wp-social-margin">
 
-                            <br><br>
-                            Footfalls:50000+&nbsp;|&nbsp;Participation:3000+&nbsp; Externals 1000+ Internal&nbsp;|&nbsp;Colleges:250+&nbsp;|&nbsp;Events:35+
-                            <br><br><p id="demo"></p>&nbsp;Days to go
+										<div class="news-entry  col-xs-12 col-sm-6 col-md-4">
+
+		                					                			<h4 class="neon3">Footfall : 50000 +<br>Colleges : 250+</h4>
+                                            
+		                		
+		                								</div>
+												<div class="news-entry  col-xs-12 col-sm-6 col-md-4">
+														
+		                					                			<h4 class="neon2"><p id="demo"></p></h4>
+		                			
+		                		
+		                								</div>
+												<div class="news-entry  col-xs-12 col-sm-6 col-md-4" id="first">
+														
+		                					                			<h4 class="neon3">Participation:<br>Externals: 3000+ | Internals: 1000+</h4>
+		                			
+		                								
+						
+			</div>
+		</div>
+		</div></div></div></div></div><div class="vc_row-full-width"></div>
+				</div>
                         </div>
                         <div class="register-popup custom-popup" style="overflow: hidden;">
                                 <div class="popup-close"><i class="fa-right"></i>X</div>
@@ -220,5 +237,5 @@
             </div>
         </div>
     </div>
-    <div class="vc_row-full-width"></div>
+   
 </div>
