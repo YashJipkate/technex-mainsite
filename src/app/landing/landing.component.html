@@ -48,9 +48,15 @@
                             </a>
                             <a *ngFor="let menuItem of menuItems">
                                 <a [routerLink]="[menuItem.path]">
-                                    <p id="same">{{ menuItem.title }}</p>
+                                    <p id="same">{{ menuItem.title }} | </p>
                                 </a>
                             </a>
+                            <a *ngFor="let teammenuItem of teammenuItems">
+                                <a [routerLink]="[teammenuItem.path]">
+                                    <p id="same">{{ teammenuItem.title }}</p>
+                                </a>
+                            </a>
+
                             <br><br>
                             Footfalls:50000+&nbsp;|&nbsp;Participation:3000+&nbsp; Externals 1000+ Internal&nbsp;|&nbsp;Colleges:250+&nbsp;|&nbsp;Events:35+
                             <br><br><p id="demo"></p>&nbsp;Days to go

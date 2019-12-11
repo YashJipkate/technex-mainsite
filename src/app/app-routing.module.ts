@@ -50,7 +50,8 @@ const routes: Routes = [
   { path: 'workshops', 
     loadChildren: () => import('./workshops/workshops.module').then(m => m.WorkshopsModule), 
     data: {title: 'Workshops | Technex'} 
-  }
+  },
+  { path: 'teampage', loadChildren: () => import('./teampage/teampage.module').then(m => m.TeampageModule) }
 ];
 
 @NgModule({

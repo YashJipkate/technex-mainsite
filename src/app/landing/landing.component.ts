@@ -23,6 +23,15 @@ export const ROUTES: RouteInfo[] = [
   },
 ];
 
+export const TEAMROUTES: RouteInfo[] = [
+  {
+    path: 'teampage',
+    title: 'Team-Page',
+    class: ''
+  },
+];
+
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -31,6 +40,7 @@ export const ROUTES: RouteInfo[] = [
 
 export class LandingComponent implements OnInit {
   menuItems: any[];
+  teammenuItems: any[];
   is_login = true;
   register_using_google = false;
   loginModel = new Login('');
@@ -71,6 +81,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.teammenuItems = TEAMROUTES.filter(teammenuItemm => teammenuItemm);
     const firebaseConfig = {
       apiKey: "AIzaSyBPlZ_NSEcmD9ZjwcdroTzpSTFXOAvRbkM",
       authDomain: "technex2020.firebaseapp.com",
