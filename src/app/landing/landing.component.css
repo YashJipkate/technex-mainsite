@@ -395,10 +395,11 @@ a{
   font-size: 25px;
   }
   .neon2{
-    visibility: hidden;
+    font-size: 15px;
   }
   .neon3{
-    visibility: hidden;
+    font-size: 15px;
   }
   #home3 {margin: 0; height: 100%;overflow: hidden}
+  
 }
