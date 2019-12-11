@@ -284,23 +284,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* general styling */
-:root {
-  font-size: calc(1vw + 1vh + 1.5vmin);
-}
-
 h1 {
   font-weight: 400;
   text-align: center;
@@ -323,30 +306,6 @@ h1 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* general styling */
-:root {
-  font-size: calc(1vw + 1vh + 1.5vmin);
-}
-h1 {
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-
 .neon3 {
   color: #fff;
   text-shadow:
@@ -363,26 +322,6 @@ h1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* general styling */
-:root {
-  font-size: calc(1vw + 1vh + 1.5vmin);
-}
-h1 {
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
-}
 a{
   text-decoration: none;
   color: white;
@@ -399,6 +338,9 @@ a{
   }
   .neon3{
     font-size: 15px;
+  }
+  #first{
+    visibility: hidden;
   }
   #home3 {margin: 0; height: 100%;overflow: hidden}
   
