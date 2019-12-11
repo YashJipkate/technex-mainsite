@@ -232,8 +232,8 @@
 @keyframes neon {
   0%,
   100% {
-    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
-    color: #FED128;
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw orange, .5vw .5vw .1vw #806914;
+    color: orange;
   }
   50% {
     text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
@@ -309,6 +309,44 @@ h1 {
 
 
 
+.neon4 {
+  color: #fff;
+  text-shadow:
+    0 0 5px orange,
+    0 0 10px orange,
+    0 0 20px orange,
+    0 0 40px orange,
+    0 0 80px orange,
+    0 0 90px orange,
+    0 0 100px orange,
+    0 0 150px orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* general styling */
+:root {
+  font-size: calc(1vw + 1vh + 1.5vmin);
+}
+h1 {
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
 .neon3 {
   color: #fff;
   text-shadow:
@@ -340,17 +378,21 @@ h1 {
 :root {
   font-size: calc(1vw + 1vh + 1.5vmin);
 }
-
 h1 {
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
 }
-
+a{
+  text-decoration: none;
+  color: white;
+}
 @media only screen and (max-width: 600px) {
-  
-  .flux{
-    font-size: 10px;
+  #tx20{
+    font-size: 50px;
+  }
+  i{
+  font-size: 25px;
   }
   .neon2{
     visibility: hidden;
@@ -358,4 +400,5 @@ h1 {
   .neon3{
     visibility: hidden;
   }
+  #home3 {margin: 0; height: 100%;overflow: hidden}
 }
