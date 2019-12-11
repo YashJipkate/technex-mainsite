@@ -333,15 +333,12 @@ a{
   i{
   font-size: 25px;
   }
-  .neon2{
-    font-size: 15px;
-  }
   .neon3{
-    font-size: 15px;
-  }
-  #first{
     visibility: hidden;
   }
-  #home3 {margin: 0; height: 100%;overflow: hidden}
+  .neon2{
+    font-size:15px;
+  }
+ 
   
 }
