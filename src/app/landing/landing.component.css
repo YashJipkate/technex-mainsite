@@ -295,6 +295,7 @@
 
 
 
+
 /* general styling */
 :root {
   font-size: calc(1vw + 1vh + 1.5vmin);
@@ -305,3 +306,49 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 }
+
+
+
+.neon3 {
+  color: #fff;
+  text-shadow:
+    0 0 5px maroon,
+    0 0 10px maroon,
+    0 0 20px red,
+    0 0 40px maroon,
+    0 0 80px maroon,
+    0 0 90px maroon,
+    0 0 100px maroon,
+    0 0 150px maroon;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* general styling */
+:root {
+  font-size: calc(1vw + 1vh + 1.5vmin);
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
