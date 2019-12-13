@@ -88,6 +88,61 @@ export class LandingComponent implements OnInit {
     this.is_login = !this.is_login;
   }
 
+  firebase_resend_verification_email() {
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
+      console.log(error);
+    });
+    if (this.loginValidate()) {
+      this.googleAnalyticsEventsService.eventEmitter("technexPage", "resendVerificationEmail", "technex", 1);
+      var self = this;
+      firebase.auth().signInWithEmailAndPassword(
+        this.login_email, this.login_password).catch(
+          (error) => {
+            console.log(error);
+            self.isMessageLogin = true;
+            self.msg_login = 'Invalid Credentials!!';
+            if (error.code == "auth/too-many-requests") {
+              self.msg_login = error.message;
+            }
+        });
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var user = firebase.auth().currentUser;
+          console.log(user);
+          if(user != null){
+            user.sendEmailVerification().then(function() {
+              self.msg_login = 'Verification Email has been resent to your email address.';
+            }).catch(function(error) {
+              console.log(error);
+            });
+          }
+          else {
+            self.isMessageLogin = true;
+            self.msg_login = 'Invalid credentials!';
+          }
+        }
+      })
+    }
+  }
+
+  firebase_reset_password() {
+    firebase.auth().signOut().then(function() {
+    }).catch(function(error) {
+      console.log(error);
+    });
+    this.googleAnalyticsEventsService.eventEmitter("technexPage", "resetPassword", "technex", 1);
+    var self = this;
+    firebase.auth().sendPasswordResetEmail(this.login_email).then(function() {
+      self.msg_login = 'Password Reset email has been sent to your email address.';
+    }).catch(function(error) {
+      if (error.message) {
+        self.msg_login = error.message;
+      }
+      console.log(error);
+    });
+  }
+
   login_user() {
     var api_error = null;
     this._apiService.login(this.loginModel).subscribe(
@@ -108,7 +163,7 @@ export class LandingComponent implements OnInit {
           }
           else if (api_error.error.non_field_errors[0] == "Email is not verified") {
             this.isMessageLogin = true;
-            this.msg_login = 'Email is not verified!'; 
+            this.msg_login = 'Email is not verified!';
           }
         } catch(err) {
           this.isMessageLogin = true;
@@ -270,6 +325,9 @@ export class LandingComponent implements OnInit {
             console.log(error);
             self.isMessageLogin = true;
             self.msg_login = 'Invalid Credentials!!';
+            if (error.code == "auth/too-many-requests") {
+              self.msg_login = error.message;
+            }
         });
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {

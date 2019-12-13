@@ -102,7 +102,9 @@
                                                     class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required"
                                                     aria-required="true" aria-invalid="false" [(ngModel)]="login_password" /></span></p>
                                     </div>
-                                    <p [hidden]="!isMessageLogin" *ngIf="register_using_google == false && is_login == true">{{ msg_login }}</p>
+                                    <p [hidden]="!isMessageLogin" *ngIf="register_using_google == false && is_login == true" style="margin-top: 15px; margin-bottom: 5px;">{{ msg_login }}</p>
+                                    <div *ngIf="msg_login == 'Email is not verified!'"><a (click)="firebase_resend_verification_email()">Click here to re-send verification email</a></div>
+                                    <div *ngIf="msg_login == 'Invalid Credentials!!'"><a (click)="firebase_reset_password()">Click here to reset your password</a></div>
                                     <div class="row">
                                         <div class="submit-wrapper col-xs-6" *ngIf="register_using_google == false && is_login == true">
                                             <div class="submit-wrap"> <input type="submit" (click)="password_login()" value="LOGIN"
