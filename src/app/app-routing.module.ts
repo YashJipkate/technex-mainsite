@@ -51,7 +51,8 @@ const routes: Routes = [
     loadChildren: () => import('./workshops/workshops.module').then(m => m.WorkshopsModule), 
     data: {title: 'Workshops | Technex'} 
   },
-  { path: 'teampage', loadChildren: () => import('./teampage/teampage.module').then(m => m.TeampageModule) }
+  { path: 'teampage', loadChildren: () => import('./teampage/teampage.module').then(m => m.TeampageModule) },
+  { path: 'gaming', loadChildren: () => import('./gaming/gaming.module').then(m => m.GamingModule) }
 ];
 
 @NgModule({
