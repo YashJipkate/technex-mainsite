@@ -1,4 +1,8 @@
 #ss{
     width:100%;
-  
+}
+#pp{
+    height: auto;
+    width: auto;
+   min-height: 800px;
 }
