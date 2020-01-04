@@ -45,7 +45,12 @@
                             </a>
                             <a *ngFor="let menuItem of menuItems">
                                 <a [routerLink]="[menuItem.path]">
-                                    <p id="same">{{ menuItem.title }}</p>
+                                    <p id="same">{{ menuItem.title }} | </p>
+                                </a>
+                            </a>
+                            <a *ngFor="let menuItem of teammenuItems">
+                                <a [routerLink]="[menuItem.path]">
+                                    <p id="same">{{ menuItem.title }} </p>
                                 </a>
                             </a>
                             <div><br>
