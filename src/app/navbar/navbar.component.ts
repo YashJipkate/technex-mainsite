@@ -28,14 +28,14 @@ export const LEFTROUTES: RouteInfo[] = [
     title: 'THINK TALKS',
     class: ''
   },
-];
-
-export const RIGHTROUTES: RouteInfo[] = [
   {
     path: 'workshops',
     title: 'WORKSHOPS',
     class: ''
   },
+];
+
+export const RIGHTROUTES: RouteInfo[] = [
   {
     path: 'initiatives',
     title: 'INITIATIVES',
@@ -44,6 +44,11 @@ export const RIGHTROUTES: RouteInfo[] = [
   {
     path: 'corporateConclave',
     title: 'CORPORATE CONCLAVE',
+    class: ''
+  },
+  {
+    path: 'gaming',
+    title: 'GAMING DUNGEON',
     class: ''
   },
 ];
