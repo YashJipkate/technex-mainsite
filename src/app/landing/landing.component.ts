@@ -157,11 +157,11 @@ export class LandingComponent implements OnInit {
     var api_error = null;
     this._apiService.login(this.loginModel).subscribe(
       data => {
-        this.cookieService.set('login_token', data.message, 200, undefined, '.technex.in');
-        this.cookieService.set('logged', 'true', 200, undefined, '.technex.in');
+        this.cookieService.set('login_token', data.message, 200, undefined, '.technex.co.in');
+        this.cookieService.set('logged', 'true', 200, undefined, '.technex.co.in');
         this.isMessageLogin = true;
         this.msg_login = 'Login Successful. You will be redirected to your dashboard'; 
-        window.location.href = 'https://dashboard.technex.in/';
+        window.location.href = 'https://dashboard.technex.co.in/';
       },
       error => {
         console.log(error);
