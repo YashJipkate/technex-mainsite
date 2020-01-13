@@ -413,7 +413,14 @@ background-image: url("/assets/wp-content/uploads/2016/10/banner-1.jpg");
 background-size: cover;
 background-position: center;
 background-repeat: repeat;
+<<<<<<< HEAD
 overflow: hidden;
+=======
+<<<<<<< HEAD
+overflow: hidden;
+=======
+>>>>>>> 899d5a7b90e7994297b6990e059e6904b2f1c6b0
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 }
 html {
 scroll-behavior: smooth;
@@ -460,8 +467,95 @@ bottom: 0;
 left: 0;
 right: 0;
 z-index: 7;
+<<<<<<< HEAD
 }
 
+=======
+}
+
+<<<<<<< HEAD
+
+=======
+@media only screen and (max-width: 1500px) {
+.center-effect canvas {
+  height: 40vw;
+}
+}
+@media only screen and (max-width: 990px) {
+.center-effect canvas {
+  display: none;
+}
+.spinning-loader{
+  display: none;
+}
+.first-page {
+  top: -180px;
+}
+}
+@media only screen and (max-width: 878px) {
+.first-page {
+  top: -200px;
+}
+}
+@media only screen and (max-width: 785px) {
+.first-page {
+  top: -300px;
+}
+}
+@media only screen and (max-width: 767px) {
+.first-page {
+  top: -500px;
+}
+.wings ul li {
+  display: none;
+}
+.center-effect canvas {
+  display: block;
+  height: 55vw;
+}
+.spinning-loader{
+  display: block;
+  width: 60vw !important;
+  height: 60vw !important;
+}
+.spin2{
+  width: 58vw !important;
+  height: 58vw !important;
+}
+.spin3{
+  width: 62vw !important;
+  height: 62vw !important;
+}
+}
+
+@media only screen and (max-width: 550px) {
+.center-effect canvas {
+  height: 77vw;
+}
+.spinning-loader{
+  width: 84vw !important;
+  height: 84vw !important;
+}
+.spin2{
+  width: 82vw !important;
+  height: 82vw !important;
+}
+.spin3{
+  width: 86vw !important;
+  height: 86vw !important;
+}
+.technex-heading {
+  font-size: 3rem !important;
+}
+}
+@media only screen and (max-width: 440px){
+.small-heading{
+  letter-spacing: 1px!important;
+  font-size: 7px!important;
+}
+}
+>>>>>>> 899d5a7b90e7994297b6990e059e6904b2f1c6b0
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 
 .technex-heading {
 font-size: 5rem;
@@ -500,6 +594,22 @@ font-family: 'Carrois Gothic';
 z-index: 8 !important;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+@media only screen and (max-width: 1200px) {
+.wings ul li {
+  padding: 10px 40px;
+}
+.left{
+  left: -70px !important;
+  text-align: left;
+}
+}
+>>>>>>> 899d5a7b90e7994297b6990e059e6904b2f1c6b0
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 
 .topnav {
 overflow: hidden;
@@ -614,6 +724,10 @@ color: white !important;
 background-position: right;
 color: white !important;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 @media only screen and (max-width: 1200px) {
 .wings ul li {
   padding: 10px 40px;
@@ -622,8 +736,14 @@ color: white !important;
 .left{
   left: -70px !important;
   text-align: left;
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 }
 }
+=======
+>>>>>>> 899d5a7b90e7994297b6990e059e6904b2f1c6b0
 .skew{
 transform: skew(20deg);
 -webkit-transform: skew(20deg);
@@ -750,6 +870,10 @@ border-radius: 10px;
 margin-bottom: 50px;
 border: 2px solid rgb(131, 185, 216);
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 @media only screen and (max-width: 1500px) {
 .center-effect canvas {
   height: 40vw;
@@ -804,6 +928,64 @@ border: 2px solid rgb(131, 185, 216);
 .first-page {
   top: -300px;
 }
+<<<<<<< HEAD
+}
+@media only screen and (max-width: 767px) {
+.first-page {
+  top: -500px;
+}
+.wings ul li {
+  display: none;
+}
+.center-effect canvas {
+  display: block;
+  height: 55vw;
+}
+.spinning-loader{
+  display: block;
+  width: 60vw !important;
+  height: 60vw !important;
+}
+.spin2{
+  width: 58vw !important;
+  height: 58vw !important;
+}
+.spin3{
+  width: 62vw !important;
+  height: 62vw !important;
+}
+}
+
+@media only screen and (max-width: 550px) {
+.center-effect canvas {
+  height: 77vw;
+}
+.spinning-loader{
+  width: 84vw !important;
+  height: 84vw !important;
+}
+.spin2{
+  width: 82vw !important;
+  height: 82vw !important;
+}
+.spin3{
+  width: 86vw !important;
+  height: 86vw !important;
+}
+.technex-heading {
+  font-size: 3rem !important;
+}
+}
+@media only screen and (max-width: 440px){
+.small-heading{
+  letter-spacing: 1px!important;
+  font-size: 7px!important;
+}
+#btf {
+  font-size: 28px !important;
+}
+=======
+>>>>>>> 3fdcdffc586330948e999c6e559e6a79fe002792
 }
 @media only screen and (max-width: 767px) {
 .first-page {
@@ -860,6 +1042,8 @@ border: 2px solid rgb(131, 185, 216);
   font-size: 28px !important;
 }
 }
+=======
+>>>>>>> 899d5a7b90e7994297b6990e059e6904b2f1c6b0
 
 
 
