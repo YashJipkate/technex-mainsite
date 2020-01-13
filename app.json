@@ -1,0 +1,19 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "The Angular frontend for the Technex website.",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "technex-mainsite",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
