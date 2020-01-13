@@ -5,6 +5,7 @@ import {
   NavigationCancel
 } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { Location } from '@angular/common';
 
 declare let ga: Function;
 
@@ -23,6 +24,7 @@ export class AppComponent {
     private router: Router) {
       this.loading = true;
     }
+    private location: Location
 
   ngOnInit() {
     const appTitle = this.titleService.getTitle();
@@ -39,6 +41,7 @@ export class AppComponent {
       ).subscribe((title: string) => {
         this.titleService.setTitle(title);
       });
+      
   }
 
   ngAfterViewInit() {
@@ -55,5 +58,12 @@ export class AppComponent {
           this.loading = true;
         }
       });
+      
+      //console.log(this.activatedRoute['_futureSnapshot']['_routerState']);
+      //console.log(this.activatedRoute);
+      //console.log(window.location.pathname);
+      //console.log(this.router.url);
+      //console.log(this.location.path);
+      
   }
 }
