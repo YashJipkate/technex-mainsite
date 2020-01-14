@@ -27,14 +27,6 @@
   max-height: 490px;
 }
 
-.news h4 {
-  color: aliceblue;
-}
-.news-date{
-  color: rgb(235, 247, 246);
-  opacity: 0.8;
-}
-
 .fade-in{
   animation: animationFrames ease 1s;
   animation-iteration-count: 1;
