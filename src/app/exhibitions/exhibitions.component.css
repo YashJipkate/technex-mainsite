@@ -16,18 +16,6 @@
   font-size: 20px;
   text-align: center;
 }
-li {
-  overflow: hidden;
-}
-li div {
-  overflow: hidden;
-}
-.team-img {
-  transition: 1s;
-}
-.team-item:hover div .team-img {
-  transform: scale(1.2)!important;
-}
 
 .fade-in{
   animation: animationFrames ease 1s;
