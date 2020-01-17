@@ -23,6 +23,14 @@ export const ROUTES: RouteInfo[] = [
   },
 ];
 
+export const TEAMROUTES: RouteInfo[] = [
+  {
+    path: 'teampage',
+    title: 'Team-Page',
+    class: ''
+  },
+];
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -31,6 +39,7 @@ export const ROUTES: RouteInfo[] = [
 
 export class LandingComponent implements OnInit {
   menuItems: any[];
+  teammenuItems: any[];
   is_login = true;
   register_using_google = false;
   loginModel = new Login('');
@@ -71,6 +80,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.teammenuItems = TEAMROUTES.filter(teammenuItemm => teammenuItemm);
     const firebaseConfig = {
       apiKey: "AIzaSyBPlZ_NSEcmD9ZjwcdroTzpSTFXOAvRbkM",
       authDomain: "technex2020.firebaseapp.com",
@@ -147,11 +157,11 @@ export class LandingComponent implements OnInit {
     var api_error = null;
     this._apiService.login(this.loginModel).subscribe(
       data => {
-        this.cookieService.set('login_token', data.message, 200, undefined, '.technex.in');
-        this.cookieService.set('logged', 'true', 200, undefined, '.technex.in');
+        this.cookieService.set('login_token', data.message, 200, undefined, '.technex.co.in');
+        this.cookieService.set('logged', 'true', 200, undefined, '.technex.co.in');
         this.isMessageLogin = true;
         this.msg_login = 'Login Successful. You will be redirected to your dashboard'; 
-        window.location.href = 'https://dashboard.technex.in/';
+        window.location.href = 'https://dashboard.technex.co.in/';
       },
       error => {
         console.log(error);
