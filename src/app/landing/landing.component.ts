@@ -9,8 +9,11 @@ import { Register } from "../utilities/register";
 import { CookieService } from 'ngx-cookie-service';
 import {GoogleAnalyticsEventsService} from "../services/google-analytics-events.service";
 import * as collegeList from '../../assets/college_list.json';
+<<<<<<< HEAD
 import { $ } from 'protractor';
 declare var jQuery: any;
+=======
+>>>>>>> 83da7b66c55178f72928030ab7a7788444765ad1
 
 declare interface RouteInfo {
   path: string;
@@ -33,6 +36,14 @@ export const TEAMROUTES: RouteInfo[] = [
   },
 ];
 
+export const HEADOUTROUTES: RouteInfo[] = [
+  {
+    path: 'headout',
+    title: 'Headout',
+    class: ''
+  },
+];
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -42,6 +53,7 @@ export const TEAMROUTES: RouteInfo[] = [
 export class LandingComponent implements OnInit {
   menuItems: any[];
   teammenuItems: any[];
+  headoutmenuItems: any[];
   is_login = true;
   register_using_google = false;
   loginModel = new Login('');
@@ -83,6 +95,7 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
     this.teammenuItems = TEAMROUTES.filter(teammenuItemm => teammenuItemm);
+    this.headoutmenuItems = HEADOUTROUTES.filter(headoutmenuItemm => headoutmenuItemm);
     const firebaseConfig = {
       apiKey: "AIzaSyBPlZ_NSEcmD9ZjwcdroTzpSTFXOAvRbkM",
       authDomain: "technex2020.firebaseapp.com",
@@ -94,6 +107,7 @@ export class LandingComponent implements OnInit {
       measurementId: "G-BPPJCTCVT6"
     };
     firebase.initializeApp(firebaseConfig);
+<<<<<<< HEAD
     if (window.location.pathname == "/"){
       console.log(window.scrollX);
       document.getElementById("custom-landing").setAttribute("style", "position: relative; top: 100vh;background-color: rgba(28, 25, 25, 0.2); z-index: 10;")
@@ -389,10 +403,9 @@ canvas.addEventListener('mousemove', function(e){
 
 
 
+=======
+>>>>>>> 83da7b66c55178f72928030ab7a7788444765ad1
   }
-
-
-  
 
   toggle_is_login() {
     this.is_login = !this.is_login;

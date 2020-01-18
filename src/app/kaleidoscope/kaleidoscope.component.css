@@ -20,29 +20,7 @@
   width:470px;
   height: auto;;
   max-width: 100%;
-  
-}
-.gal-title {
-  font-size: 24px;
-}
-.gal-subtitle {
-  font-size: 19px;
-}
-
-.item {
-  margin-bottom: 50px;
-  overflow: hidden;
-}
-.item a {
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-}
-.item a img {
-  border-radius: 10px;
-}
-.item:hover a img {
-  transform: scale(1.2) !important;
+  min-height: 500px;
 }
 
 .fade-in {

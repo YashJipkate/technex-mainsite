@@ -234,7 +234,7 @@ h3 {
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 19px;
 }
 
 h5 {
@@ -3187,10 +3187,6 @@ body {
     overflow: hidden;
 }
 
-.register-link:active .register-popup {
-    display: block;
-}
-
 .register-popup form {
     width: 100%;
     box-sizing: border-box;
@@ -3422,7 +3418,7 @@ input[type="submit"][disabled]:focus i {
 
 .gradient-btn svg {
     max-height: 54px;
-    width: 102%;
+    width: 100%;
     display: block;
     position: absolute;
     top: 0;
@@ -3716,8 +3712,7 @@ input[type="submit"][disabled]:focus i {
     z-index: 9000;
     display: block;
     vertical-align: middle;
-    background-color: rgba(1, 14, 24) !important;
-    box-shadow: 0px 0px 5px 0px black;
+    background-color: rgba(28, 25, 25, 0.2);
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -3914,6 +3909,8 @@ input[type="submit"][disabled]:focus i {
 @media (max-width: 767px) {
     .header .centered-menu-wrap .main-nav {
         display: block;
+        -webkit-transition: all 0.7s ease;
+        transition: all 0.7s ease;
         overflow: hidden;
     }
     .header .centered-menu-wrap .main-nav.active {
@@ -4720,7 +4717,7 @@ body .dropdown-menu>.active>a:hover {
     position: fixed;
     top: 50%;
     left: 50%;
-    max-width: 450px;
+    max-width: 410px;
     width: 100%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -4981,7 +4978,7 @@ body .custom-popup .wpcf7-form span.wpcf7-not-valid-tip {
 }
 
 .block-title h4 {
-    font-size: 15px;
+    font-size: 28px;
 }
 
 .block-title h5 {
@@ -5112,7 +5109,6 @@ body .custom-popup .wpcf7-form span.wpcf7-not-valid-tip {
     vertical-align: top;
     position: relative;
     cursor: pointer;
-    padding: 30px
 }
 
 @media (max-width: 991px) {
@@ -5168,9 +5164,8 @@ body .custom-popup .wpcf7-form span.wpcf7-not-valid-tip {
 
 .team-img {
     width: 100%;
-    height: 350px;
+    height: 420px;
     display: block;
-    border-radius: 5px;
 }
 
 .team-title {
@@ -7418,7 +7413,7 @@ body .single-page .container.has-no-title {
 .news .news-date {
     font-weight: 300;
     color: #ffffff;
-    font-size: 15px;
+    font-size: 10px;
     font-family: "Ubuntu", sans-serif;
     opacity: .5;
     letter-spacing: .5px;
@@ -7551,7 +7546,6 @@ body .single-page .container.has-no-title {
     -webkit-transition: all 250ms ease;
     transition: all 250ms ease;
     position: relative;
-    background-size: 200%;
 }
 
 .events-wrapper .tabs-header2 ul li a::before {
@@ -7566,7 +7560,6 @@ body .single-page .container.has-no-title {
     border: 5px solid transparent;
     z-index: 10;
     border-radius: 50%;
-    background-size: 200%;
 }
 
 .events-wrapper .tabs-header2 ul li.active::after,
@@ -9161,21 +9154,3 @@ body .rtb-booking-form .message textarea {
         padding-right: 15px;
     }
 }
-
-
-/***skv*****/
-.item {
-    margin-bottom: 50px;
-    overflow: hidden;
-  }
-  .item a {
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-  }
-  .item a img {
-    border-radius: 10px;
-  }
-  .item:hover a img {
-    transform: scale(1.2) !important;
-  }
