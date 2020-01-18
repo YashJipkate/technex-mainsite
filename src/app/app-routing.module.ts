@@ -69,7 +69,8 @@ const routes: Routes = [
   { path: 'webdev', loadChildren: () => import('./w14/w14.module').then(m => m.W14Module), data: {title: 'Workshops | Technex'} },
   { path: 'raspberry', loadChildren: () => import('./w15/w15.module').then(m => m.W15Module), data: {title: 'Workshops | Technex'} },
   { path: 'plc', loadChildren: () => import('./w16/w16.module').then(m => m.W16Module), data: {title: 'Workshops | Technex'} },
-  { path: 'appdev', loadChildren: () => import('./w17/w17.module').then(m => m.W17Module), data: {title: 'Workshops | Technex'} }
+  { path: 'appdev', loadChildren: () => import('./w17/w17.module').then(m => m.W17Module), data: {title: 'Workshops | Technex'} },
+  { path: 'headout', loadChildren: () => import('./headout/headout.module').then(m => m.HeadoutModule) }
 ];
 
 @NgModule({
