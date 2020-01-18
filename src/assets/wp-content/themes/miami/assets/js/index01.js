@@ -131,7 +131,7 @@ psParticle.prototype.move = function() {
     }, 1e3 * b.slideDelay)), typeof b.onNextSlide == "function" && b.onNextSlide(b.currImg)
 }, ParticleSlider.prototype.drawParticles = function() {
     var a = this,
-        b = a.ctx.createImageData(a.cw, a.ch),
+        b = a.ctx.createImageData(a.cw, 10),
         c = b.data,
         d, e, f, g, h, i, j = a.pxlBuffer.first;
     while (j != null) {

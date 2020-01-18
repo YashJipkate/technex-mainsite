@@ -9,6 +9,7 @@ import { Register } from "../utilities/register";
 import { CookieService } from 'ngx-cookie-service';
 import {GoogleAnalyticsEventsService} from "../services/google-analytics-events.service";
 import * as collegeList from '../../assets/college_list.json';
+import { $ } from 'protractor';
 declare var jQuery: any;
 
 declare interface RouteInfo {
@@ -94,7 +95,12 @@ export class LandingComponent implements OnInit {
     };
     firebase.initializeApp(firebaseConfig);
     if (window.location.pathname == "/"){
-      document.getElementById("custom-landing").setAttribute("style", "position: relative; top: 100vh;background-color: rgba(28, 25, 25, 0.2)")
+      console.log(window.scrollX);
+      document.getElementById("custom-landing").setAttribute("style", "position: relative; top: 100vh;background-color: rgba(28, 25, 25, 0.2); z-index: 10;")
+    }
+    if( window.innerWidth < 600 ){
+      //document.getElementById("custom-landing").setAttribute("style", "display: none;");
+      document.getElementById('fp').setAttribute("style", "top: 0px;");
     }
 
     

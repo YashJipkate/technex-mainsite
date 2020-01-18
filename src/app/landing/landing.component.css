@@ -121,6 +121,7 @@ padding:0;
 margin:0;
 }
 
+
 @media (min-width: 768px) {
 #home-3{
   height: 100vh;
@@ -357,14 +358,12 @@ i{
 font-size: 25px;
 }
 
-.neon2{
-  font-size:15px;
-}
 
 
 }
 
 /*skv*/
+
 
 .time-footer-container {
 text-align: center;
@@ -418,6 +417,7 @@ overflow: hidden;
 html {
 scroll-behavior: smooth;
 }
+
 html, body {
 margin: 0;
 padding: 0;
@@ -431,16 +431,7 @@ background-color: black;
 
 
 
-@media (min-width: 1000px) {
-body {
-background-image: @hintImg;
-background-repeat: no-repeat;
 
-& > .dg {
-display: block;
-}
-}
-}
 
 .center-effect{
 height: 100%;
@@ -452,7 +443,7 @@ top:38px;
 .center-effect canvas {
 padding: 0;
 margin: auto;
-display: block;
+display:none;
 height: 48vw;
 position: absolute;
 top: 0;
@@ -472,6 +463,11 @@ color: white;
 line-height: 40px;
 height: 120px;
 }
+.technex-heading img {
+  width: 450px;
+  max-width: 100vh;
+  margin-top: 20px;
+}
 .small-heading {
 font-size: 10px;
 letter-spacing: 2.6px;
@@ -481,7 +477,7 @@ list-style-type: none;
 margin: 0;
 padding: 0;
 position: absolute;
-padding-top: 40px;
+padding-top: 0px;
 z-index: 8 !important;
 }
 
@@ -591,7 +587,7 @@ margin-bottom: 0!important;
 }
 .right li {
 background: #eb3349; /* fallback for old browsers */
-padding-right: 90px !important;
+padding-right: 110px !important;
 background: -webkit-linear-gradient(to right, #e41930, #ad4848); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #e41919, #e47d6d);
 
@@ -672,7 +668,7 @@ z-index: 6;
   border: 2px solid rgb(110, 67, 67);
     pointer-events: none;
     
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.2);
    
 }
 .spin3 {
@@ -684,6 +680,18 @@ border-top: 3px solid rgb(204, 40, 40);
   pointer-events: none;
   animation-direction: reverse;
   
+}
+.center-image01 {
+  position: absolute;
+  width: 23vw;
+  top: 55vh;
+  left: 50vw;
+  z-index: 10;
+}
+
+.center-image01 img {
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 .scroll-bottom {
   position: absolute;
@@ -752,11 +760,11 @@ border: 2px solid rgb(131, 185, 216);
 }
 @media only screen and (max-width: 1500px) {
 .center-effect canvas {
-  height: 40vw;
+  height: 20vw;
 }
 .wings ul li {
   padding: 10px 40px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .right{
   right: -30px !important;
@@ -764,21 +772,24 @@ border: 2px solid rgb(131, 185, 216);
 }
 .spinning-loader{
   display: block;
-  width: 30vw !important;
-  height: 30vw !important;
+  width: 34vw !important;
+  height: 34vw !important;
 }
 .spin2{
-  width: 28vw !important;
-  height: 28vw !important;
-}
-.spin3{
   width: 32vw !important;
   height: 32vw !important;
+}
+.spin3{
+  width: 36vw !important;
+  height: 36vw !important;
 }
 }
 @media only screen and (max-width: 1400px) {
 .center-effect canvas {
-  height: 30vw;
+  height: 38vw;
+}
+.center-image01 {
+  width: 20vw;
 }
 }
 @media only screen and (max-width: 990px) {
@@ -790,6 +801,9 @@ border: 2px solid rgb(131, 185, 216);
 }
 .spinning-loader{
   display: none;
+}
+.center-image01 {
+  width: 20vw;
 }
 .first-page {
   top: -180px;
@@ -829,6 +843,10 @@ border: 2px solid rgb(131, 185, 216);
   width: 62vw !important;
   height: 62vw !important;
 }
+.center-image01 {
+  height: 55vw;
+  width: auto;
+}
 }
 
 @media only screen and (max-width: 550px) {
@@ -850,6 +868,21 @@ border: 2px solid rgb(131, 185, 216);
 .technex-heading {
   font-size: 3rem !important;
 }
+.neon3 {
+  text-shadow: 0 0 10px maroon;
+}
+.neon2{
+text-shadow: 0 0 5px #0ff;
+}
+.about-technex {
+  font-size: 0.9rem;
+  padding: 15px;
+}
+.theme-technex {
+  font-size: 0.9rem;
+  padding: 20px 15px;
+}
+
 }
 @media only screen and (max-width: 440px){
 .small-heading{
@@ -859,6 +892,18 @@ border: 2px solid rgb(131, 185, 216);
 #btf {
   font-size: 28px !important;
 }
+.technex-heading img {
+  width: 100%;
+}
+.second-page {
+  max-height: calc( 100vh - 65px ) ;
+  overflow: scroll;
+}
+.aftermovie {
+  text-align: center;
+  padding: 20px 15px;
+  }
+
 }
 
 
