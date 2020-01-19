@@ -1,22 +1,21 @@
 <!-- HEADER -->
-<header class="header clearfix" id="custom-landing">
+<header class="header clearfix">
 
 	<!--CENTERED MENU-->
 	<div class="centered-menu-wrap">
 		<div class="logo-block mobile">
-			<a class="logo" [href]="logomenuItems[0].path">
+			<a class="logo" [routerLink]="[logomenuItems[0].path]">
 										<img class="f-logo" src="assets/image/logo-s2-white1.png" alt="TECHNEX">
 								</a>
 		</div>
 		<nav class="main-nav">
     <!-- Site menu -->
 			<ul id="menu-top-left-menu" class="anchor-navigation">
-				
 
 <li
 *ngFor="let leftmenuItem of leftmenuItems"
 >
-<a [href]="leftmenuItem.path">
+<a [routerLink]="[leftmenuItem.path]">
   <p id="ss">{{ leftmenuItem.title }}</p>
 </a>
 
@@ -28,7 +27,7 @@
 </li>
 </ul>
 			<div class="logo-block">
-				<a class="logo" [href]="logomenuItems[0].path">
+				<a class="logo" [routerLink]="[logomenuItems[0].path]">
 					<img class="f-logo" src="assets/image/logo-s2-white.png" id="navbar-logo" alt="TECHNEX">
 				</a>
 			</div>
@@ -37,7 +36,7 @@
 					<li
 					*ngFor="let rightmenuItem of rightmenuItems"
 					>
-					<a [href]="rightmenuItem.path">
+					<a [routerLink]="[rightmenuItem.path]">
 					  <p id=ss>{{ rightmenuItem.title }}</p>
 					</a>
 					
@@ -48,10 +47,9 @@
 					<a *ngIf="isLoggedInBool" href="https://dashboard.technex.co.in/">
 					  <p id=ss1>Dashboard</p>
 					</a>
-					<a *ngIf="!isLoggedInBool" href="#">Registrations Open!</a>
+					<a *ngIf="!isLoggedInBool" href="#"><p id="ss2" >Registrations Open!</p></a>
 
 					</li>
-					
 					
 					
 </ul>
