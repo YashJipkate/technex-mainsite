@@ -7851,9 +7851,7 @@ body .single-page .container.has-no-title {
     .team-img {
         height: 300px;
     }
-    .gal-item {
-        height: 185px !important;
-    }
+    
     .search .block-title,
     .single-page .block-title {
         margin-top: 140px;

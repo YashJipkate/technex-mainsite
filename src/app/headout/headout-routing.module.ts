@@ -9,4 +9,4 @@ const routes: Routes = [{ path: '', component: HeadoutComponent }];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HeadingRoutingModule { }
+export class HeadoutRoutingModule { }
