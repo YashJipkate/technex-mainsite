@@ -9,11 +9,6 @@ declare interface RouteInfo {
 
 export const LEFTROUTES: RouteInfo[] = [
   {
-    path: 'startupFair',
-    title: 'STARTUP FAIR',
-    class: ''
-  },
-  {
     path: 'exhibitions',
     title: 'EXHIBITIONS',
     class: ''
