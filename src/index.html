@@ -83,7 +83,15 @@
         </script>
         <link rel="icon" href="assets/wp-content/uploads/2016/12/16x16.png" sizes="192x192" />
         <link rel="apple-touch-icon-precomposed" href="assets/wp-content/uploads/2016/12/16x16.png" />
-        
+        <script src=https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js></script>
+        <script>
+          window.loadWatsonAssistantChat({
+            integrationID: "1caa0430-f63e-46de-acdb-be0aee27bb81", // The ID of this integration.
+            region: "us-east" // The region your integration is hosted in.
+          }).then(function(instance){
+            instance.render();
+          });
+        </script>
         <script>
                 // Set the date we're counting down to
                 var countDownDate = new Date("Feb 14, 2020 00:00:00").getTime();
