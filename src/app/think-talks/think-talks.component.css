@@ -30,6 +30,13 @@
   max-height: 368px;
 }
 
+#set3{
+  width:370px;
+  height: auto;
+  max-width: 100%;
+  min-height: 530px;
+}
+
 #set1 {
   width:370px;
   height: auto;
