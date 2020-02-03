@@ -102,6 +102,12 @@ export class LandingComponent implements OnInit {
       measurementId: "G-BPPJCTCVT6"
     };
     firebase.initializeApp(firebaseConfig);
+    // Popup
+    document.getElementById('load-popup').classList.add('load-popup-show');
+  }
+
+  closeLoadPopup() {
+    document.getElementById('load-popup').classList.remove('load-popup-show');
   }
 
   toggle_is_login() {
