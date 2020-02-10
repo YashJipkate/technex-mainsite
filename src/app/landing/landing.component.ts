@@ -93,7 +93,7 @@ export class LandingComponent implements OnInit {
     this.headoutmenuItems = HEADOUTROUTES.filter(headoutmenuItemm => headoutmenuItemm);
     const firebaseConfig = {
       apiKey: "AIzaSyBPlZ_NSEcmD9ZjwcdroTzpSTFXOAvRbkM",
-      authDomain: "technex2020.firebaseapp.com",
+      authDomain: "auth.technex.co.in",
       databaseURL: "https://technex2020.firebaseio.com",
       projectId: "technex2020",
       storageBucket: "technex2020.appspot.com",
@@ -102,6 +102,12 @@ export class LandingComponent implements OnInit {
       measurementId: "G-BPPJCTCVT6"
     };
     firebase.initializeApp(firebaseConfig);
+    // Popup
+    document.getElementById('load-popup').classList.add('load-popup-show');
+  }
+
+  closeLoadPopup() {
+    document.getElementById('load-popup').classList.remove('load-popup-show');
   }
 
   toggle_is_login() {
