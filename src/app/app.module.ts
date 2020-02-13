@@ -11,13 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CookieService } from 'ngx-cookie-service';
 import { GoogleAnalyticsEventsService } from "./services/google-analytics-events.service";
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     NavbarComponent,
-    EventsComponent
+    EventsComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
