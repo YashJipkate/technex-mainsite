@@ -24,6 +24,7 @@ export class AuthComponent implements OnInit {
   teammenuItems: any[];
   headoutmenuItems: any[];
   is_login = true;
+  register_using_google = false;
   loginModel = new Login('');
   register_email = '';
   register_firstname = '';
@@ -36,6 +37,7 @@ export class AuthComponent implements OnInit {
   register_gender = 0;
   register_year = 1;
   register_button_tag = "Register";
+  register_google_button_tag = "Register with Google";
 
   loginform = false;
   login_email = '';
@@ -43,6 +45,7 @@ export class AuthComponent implements OnInit {
   isLoggedIn: string;
   isLoggedInBool: boolean;
   login_button_tag = "Login";
+  login_google_button_tag = "Google Login";
 
   isMessageLogin = false;
   msg_login = '';
@@ -181,6 +184,58 @@ export class AuthComponent implements OnInit {
     );
   }
 
+  firebase_google_login() {
+    if (this.register_using_google === true) {
+      this.register_google_button_tag = "Please Wait...";
+      this.loginform = false;
+      this.is_login = false;
+      this.register_google();
+    }
+    else {
+      this.login_google_button_tag = "Please Wait...";
+      this.register_google_button_tag = "Please Wait...";
+      firebase.auth().signOut().then(function() {
+      }).catch(function(error) {
+        console.log(error);
+      });
+      var provider = new firebase.auth.GoogleAuthProvider();
+      var api_error = null;
+
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+        var id_token = null;
+        var user = result.user;
+        id_token = user.toJSON();
+        id_token = id_token.stsTokenManager.accessToken;
+        this.loginModel.id_token = id_token;
+        this._apiService.login(this.loginModel).subscribe(
+          data => {
+            this.login_google_button_tag = "Redirecting...";
+            this.login_user();
+          },
+          error => {
+            api_error = error;
+            try {
+              if (api_error.error.non_field_errors[0] == "No such account exists") {
+                this.login_google_button_tag = "Google Login";
+                this.register_using_google = true;
+                this.register_google_button_tag = "Register with Google";
+                this.is_login = false;
+                this.loginform = false;
+                this.register_email = user.email;
+              }
+            } catch (err) {}
+          }
+        );
+      }.bind(this)
+      ).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+      });
+    }
+  }
+
   firebase_password_register() {
     var api_error = null;
     this.isMessageRegister = false;
@@ -246,6 +301,40 @@ export class AuthComponent implements OnInit {
       console.log(error);
     });
     
+  }
+
+  register_google() {
+    var api_error = null;
+    const registerModel = new Register(
+      this.loginModel.id_token,
+      this.register_firstname,
+      this.register_lastname,
+      Number(this.register_gender),
+      Number(this.register_year),
+      this.register_phone,
+      this.register_college,
+      this.register_city);
+    this._apiService.register(registerModel).subscribe(
+      data => {
+        this.register_google_button_tag = "Redirecting...";
+        this.login_user();
+      },
+      error => {
+        api_error = error;
+        console.log(error);
+        try {
+          if (api_error.error.non_field_errors[0] == "User already exists") {
+            this.isMessageRegister = true;
+            this.msg_register = 'User already exists';
+            this.register_google_button_tag = "Register with Google";
+          }
+        } catch(err) {
+          this.isMessageRegister = true;
+          this.msg_register = 'Please fill all the fields correctly';
+          this.register_google_button_tag = "Register with Google";
+        }
+      }
+    )
   }
 
   register_password() {
@@ -324,21 +413,23 @@ export class AuthComponent implements OnInit {
       this.register_button_tag = "Register";
       return false;
     }
-    if (this.register_password1.length < 6) {
-      this.isMessageRegister = true;
-      this.msg_register = 'Password should be atleast 6 characters long';
-      this.register_button_tag = "Register";
-      this.register_password1 = '';
-      this.register_password2 = '';
-      return false;
-    }
-    if (this.register_password1 !== this.register_password2) {
-      this.isMessageRegister = true;
-      this.msg_register = 'Passwords do not match!';
-      this.register_button_tag = "Register";
-      this.register_password1 = '';
-      this.register_password2 = '';
-      return false;
+    if (this.register_using_google == false) {
+      if (this.register_password1.length < 6) {
+        this.isMessageRegister = true;
+        this.msg_register = 'Password should be atleast 6 characters long';
+        this.register_button_tag = "Register";
+        this.register_password1 = '';
+        this.register_password2 = '';
+        return false;
+      }
+      if (this.register_password1 !== this.register_password2) {
+        this.isMessageRegister = true;
+        this.msg_register = 'Passwords do not match!';
+        this.register_button_tag = "Register";
+        this.register_password1 = '';
+        this.register_password2 = '';
+        return false;
+      }
     }
     if (this.register_firstname == '') {
       this.isMessageRegister = true;
@@ -379,12 +470,15 @@ export class AuthComponent implements OnInit {
   }
 
   register() {
-    this.register_button_tag = "Registering...";
     firebase.auth().signOut().then(function() {
     }).catch(function(error) {
       console.log(error);
     });
-    if (this.registerValidate()) {
+    if (this.register_using_google === true) {
+      this.register_google_button_tag = "Please Wait...";
+      this.register_google();
+    } else {
+      this.register_button_tag = "Registering...";
       this.register_password();
     }
   }

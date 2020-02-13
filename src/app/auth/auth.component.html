@@ -76,9 +76,14 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <button type="submit" (click)="password_login()" class="btn btn-primary btn-block">{{ login_button_tag }}</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" (click)="firebase_google_login()" class="btn btn-primary btn-block">{{ login_google_button_tag }}</button>
                             </div>
                         </div>
                     </div>
@@ -114,9 +119,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" *ngIf="register_using_google==false">
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Email ID" required="required" [(ngModel)]="register_email">
+                            </div>
+                        </div>
+                        <div class="col-md-6" *ngIf="register_using_google==true">
+                            <div class="form-group">
+                                <input type="email" disabled class="form-control" name="email" placeholder="Email ID" required="required" [(ngModel)]="register_email">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -125,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" *ngIf="register_using_google==false">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" placeholder="Password" required="required" [(ngModel)]="register_password1">
@@ -180,9 +190,14 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <button type="submit" (click)="register()" class="btn btn-primary btn-block">{{ register_button_tag }}</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" (click)="firebase_google_login()" class="btn btn-primary btn-block">{{ register_google_button_tag }}</button>
                             </div>
                         </div>
                     </div>
