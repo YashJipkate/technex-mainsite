@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://technex.co.in/</loc><priority>1.00</priority></url>
 <url><loc>https://ca.technex.co.in/</loc><priority>0.90</priority></url>
-<url><loc>https://dashboard.technex.co.in/</loc><priority>0.80</priority></url>
 <url><loc>https://technex.co.in/events</loc><priority>0.70</priority></url>
 <url><loc>https://technex.co.in/sponsors</loc><priority>0.70</priority></url>
 <url><loc>https://technex.co.in/exhibitions</loc><priority>0.60</priority></url>
@@ -12,8 +11,4 @@
 <url><loc>https://technex.co.in/thinkTalks</loc><priority>0.60</priority></url>
 <url><loc>https://technex.co.in/workshops</loc><priority>0.60</priority></url>
 <url><loc>https://technex.co.in/corporateConclave</loc><priority>0.60</priority></url>
-<url><loc>https://dashboard.technex.co.in/profile</loc><priority>0.50</priority></url>
-<url><loc>https://dashboard.technex.co.in/registration</loc><priority>0.50</priority></url>
-<url><loc>https://dashboard.technex.co.in/registered-events</loc><priority>0.50</priority></url>
-<url><loc>https://dashboard.technex.co.in/registered-workshops</loc><priority>0.50</priority></url>
 </urlset>
