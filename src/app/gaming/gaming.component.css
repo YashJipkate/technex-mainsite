@@ -88,6 +88,9 @@ body .light-scheme
 body .light-scheme
 .preloader-words-area {
   background: #fff;
+  text-decoration: dashed;
+  font-variant: inherit;
+  text-shadow: #87cefa;
 }
 
 body.dark-scheme .preloader-area,
